@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'app' => 'MyCoins',
+    'home' => 'Accueil',
+    'login' => 'Connexion',
+    'logout' => 'Se déconnecter',
+    'register' => 'S\'enregistrer',
+    'resetPword' => 'Réinitialisation mot de passe',
+    'toggleNav' => 'Changer de menu',
+    'editProfile' => 'Editer le profil',
+    'adminDropdownNav' => 'Admin',
+    'activation' => 'Inscription initiée | Activation requise',
+    'exceeded' => 'Erreur d\'activation',
+    'adminUserList' => 'Administration membres',
+    'adminEditUsers' => 'Edition membres',
+    'adminNewUser' => 'Créer un nouveau membre',
+    'adminThemesList' => 'Thèmes',
+    'adminThemesAdd' => 'Ajouter un nouveau thème',
+    'adminLogs' => 'Fichier Log',
+    'adminPHP' => 'Information PHP',
+    'adminRoutes' => 'Details routage',
+    'adminActivity' => 'Activity Log',
+    'activeUsers' => 'Active Users',
+    'laravelBlocker' => 'Blocker',
+    'laravelroles' => 'Roles Administration',
+];
