@@ -7,12 +7,12 @@ return [
     'statistics' => 'Statistics',
     'places' => 'Places',
     'filter' => 'Filter By',
-    'coinType' => 'Coin Type',
+    'coinType' => 'Type',
     'year' => 'Year',
     'search' => 'Search',
     'collection' => 'Collection',
     'localization' => 'Localization',
-    'createdAt' => 'Member since',
+    'memberSince' => 'Member since',
     'sendPrivMsg' => 'Send Message',
     'nations' => 'Nations',
     'totalCollection' => 'Total Collection',
@@ -22,6 +22,11 @@ return [
     'noCoins' => 'Sorry there are no coins for this search',
     'addPlace' => 'Add Place',
     'streetName' => 'Street Name',
-    'postalCode' => 'Code Postal',
-    'cityName' => 'City'
+    'postcode' => 'Postcode',
+    'cityName' => 'City',
+    'allCountries' => 'All Countries',
+    'allYears' => 'All Years',
+    'coins' => 'Coins',
+    'description' => 'Description',
+    'createdAt' => 'Created at'
 ];

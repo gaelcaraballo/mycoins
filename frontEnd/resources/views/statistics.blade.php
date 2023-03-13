@@ -1,58 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    <style>
-        @media (max-width: 576px) {
-            body {
-                background-color: #212529;
-            }
-
-            .coinsDiv {
-                justify-content: center;
-                border: none !important;
-                width: 100vw !important;
-                border-radius: 0 !important;
-            }
-        }
-
-        .titleBar {
-            height: 15px;
-            border-bottom: 1px solid darkgray;
-        }
-
-        .circle-bg {
-            fill: none;
-            stroke: #eee;
-            stroke-width: 2.7;
-        }
-
-        .circle {
-            fill: none;
-            stroke-width: 2.8;
-            stroke-linecap: round;
-            animation: progress 1s;
-        }
-
-        @keyframes progress {
-            0% {
-                stroke-dasharray: 0 100;
-            }
-        }
-
-        .circular-chart .circle {
-            stroke: #3c9ee5;
-        }
-
-        .percentage {
-            fill: white;
-            font-size: 0.5em;
-            text-anchor: middle;
-        }
-    </style>
-    <div class="d-flex justify-content-center">
+    <link rel="stylesheet" href="{{asset('css/statistics.css')}}">
+    <div class="d-flex justify-content-center mt-4 mb-4">
         <div
             class="coinsDiv d-flex justify-content-center text-center bg-dark text-white col-12 col-sm-8 row border rounded">
             <div class="titleBar">
-                <small class="fs-5 ps-3 pe-3 bg-dark">{{ __('views.totalCollection') }}</small>
+                <small class="fs-5 ps-3 pe-3 bg-dark">@lang('views.totalCollection')</small>
             </div>
             <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 border rounded m-3 me-auto ms-auto">
                 <div class="mt-2 row d-flex justify-content-center">
@@ -71,7 +24,7 @@
                 </div>
             </div>
             <div class="titleBar">
-                <small class="fs-5 ps-3 pe-3 bg-dark">{{ __('views.nations') }}</small>
+                <small class="fs-5 ps-3 pe-3 bg-dark">@lang('views.nations')</small>
             </div>
             @foreach($countries as $country)
                 <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 border rounded m-3">

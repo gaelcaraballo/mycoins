@@ -7,12 +7,12 @@ return [
     'statistics' => 'Estadísticas',
     'places' => 'Lugares',
     'filter' => 'Filtar por',
-    'coinType' => 'Tipo de moneda',
+    'coinType' => 'Tipo',
     'year' => 'Año',
     'search' => 'Buscar',
     'collection' => 'Colección',
     'localization' => 'Localización',
-    'createdAt' => 'Miembro desde',
+    'memberSince' => 'Miembro desde',
     'sendPrivMsg' => 'Enviar mensaje',
     'nations' => 'Naciones',
     'totalCollection' => 'Colección Total',
@@ -22,6 +22,11 @@ return [
     'noCoins' => 'Lo sentimos, no hay resultados para esta búsqueda',
     'addPlace' => 'Añadir Lugar',
     'streetName' => 'Nombre de la calle',
-    'postalCode' => 'Código postal',
-    'cityName' => 'Ciudad'
+    'postcode' => 'Código postal',
+    'cityName' => 'Ciudad',
+    'allCountries' => 'Todos los países',
+    'allYears' => 'Todos los años',
+    'coins' => 'Monedas',
+    'description' => 'Descripción',
+    'createdAt' => 'Creado en'
 ];

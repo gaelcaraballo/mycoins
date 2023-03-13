@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Coin;
 use App\Models\Collection;
 use App\Models\Year;
@@ -8,13 +10,17 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-
 class CoinController extends Controller
 {
     public function catalog($id): Factory|View|Application
     {
-        return view("/catalog",
-            ["coins" => Coin::where('type', $id)->paginate(15),
+        if ($id == 0) {
+            $coins = Coin::paginate(15);
+        } else {
+            $coins = Coin::where('type', $id)->paginate(15);
+        }
+        return view("/coins/catalog",
+            ["coins" => $coins,
                 "countrySelect" => Coin::join('countries', 'coins.country_id', '=', 'countries.id')
                     ->select('countries.country_name', 'countries.id')->distinct()->pluck('country_name', 'id'),
                 "typeSelect" => Coin::select('type')->distinct()->pluck('type'),
@@ -46,12 +52,18 @@ class CoinController extends Controller
         $query->where('type', $ts);
         $coins = $query->paginate(15);
 
-        return view("/catalog",
+        return view("/coins/catalog",
             ["coins" => $coins,
                 "countrySelect" => Coin::join('countries', 'coins.country_id', '=', 'countries.id')
                     ->select('countries.country_name', 'countries.id')->distinct()->pluck('country_name', 'id'),
                 "typeSelect" => Coin::select('type')->distinct()->pluck('type')->toArray(),
                 "yearSelect" => Year::pluck('year', 'id'),
                 "ts" => $ts]);
+    }
+
+    public function detailedCoin($id): Factory|View|Application
+    {
+        return view("coins/detailedCoin",
+            ["detailedCoin" => Coin::find($id)]);
     }
 }

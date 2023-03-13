@@ -1,66 +1,73 @@
 @extends('layouts.app')
 @section('content')
-    <style>
-        @media (max-width: 576px) {
-            body {
-                background-color: #212529;
-            }
-
-            .placesDiv {
-                justify-content: center;
-                border: none !important;
-                width: 100vw !important;
-                border-radius: 0 !important;
-            }
-        }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9ejmUZ74ZX8eoeu2OIw20l6A-wW93fjI"></script>
-    <div class="container-fluid">
+    <link rel="stylesheet" href="{{asset('css/places.css')}}">
+    <div class="container-fluid mt-4 mb-4">
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
-            <h2>{{__('views.places')}}</h2>
+            <div class="d-flex justify-content-between mt-1 border-bottom">
+                <h2>@lang('views.places')</h2>
+                <button type="submit" class="btn btn-success mb-1">@lang('views.addPlace')</button>
+            </div>
             <div class="mt-1">
                 <form action="{{route('places.store')}}" method="POST">
                     @csrf
-                    <div>
-                        <label for="city_name" class="mt-3 fw-bold">{{ __('views.cityName') }}</label>
-                        <input class="form-control" type="text" name="city_name" id="city_name">
-                        <label for="postal_code" class="mt-3 fw-bold">{{ __('views.postalCode') }}</label>
-                        <input class="form-control" type="number" name="postal_code" id="postal_code">
-                        <label for="street_name" class="mt-3 fw-bold">{{ __('views.streetName') }}</label>
-                        <input class="form-control" type="text" name="street_name" id="street_name">
-                        <label for="country_id" class="mt-3 fw-bold">{{ __('auth.country') }}</label>
-                        <div class="mb-1">
-                            {!! Form::select('selectCountry', $countries, null,['class' => 'form-select', 'placeholder' => __('views.selectCountry')]) !!}
+                    <div class="mb-2">
+                        <div class="row row-cols-2">
+                            <div class="col">
+                                <label for="city_name" class="mt-3 fw-bold">@lang('views.cityName')</label>
+                            </div>
+                            <div class="col">
+                                <label for="postcode" class="mt-3 fw-bold">@lang('views.postcode')</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control @error('city_name') is-invalid @enderror" type="text"
+                                       name="city_name" id="city_name">
+                                @error('city_name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror</div>
+                            <div class="col">
+                                <input class="form-control @error('postcode') is-invalid @enderror" type="number"
+                                       name="postcode" id="postcode">
+                                @error('postcode')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row row-cols-2">
+                            <div class="col">
+                                <label for="street_name" class="mt-3 fw-bold">@lang('views.streetName')</label>
+
+                            </div>
+                            <div class="col">
+                                <label for="country_id" class="mt-3 fw-bold">@lang('auth.country')</label>
+
+                            </div>
+                            <div class="col">
+                                <input class="form-control @error('street_name') is-invalid @enderror" type="text"
+                                       name="street_name" id="street_name">
+                                @error('street_name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col">
+                                <div class="mb-1">
+                                    {!! Form::select('selectCountry', $countries, null,['class' => 'form-select', 'placeholder' => __('views.selectCountry')]) !!}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="map" class="d-flex justify-content-center" style="height: 300px;"></div>
+                    <div id="map" class="d-flex justify-content-center border border-2 border-dark-subtle"
+                         style="height: 300px;"></div>
                     <input type="hidden" name="latitude" id="latitude">
                     <input type="hidden" name="longitude" id="longitude">
-                    <div class="d-flex justify-content-center mt-1">
-                        <button type="submit" class="btn btn-success">{{__('views.addPlace')}}</button>
-                    </div>
                 </form>
             </div>
-
             <script>
                 // Initialize the map
                 let map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 14,
-                    center: {lat: 40.4378698, lng: -3.8196208}
+                    zoom: 14
                 });
 
-                // Add a marker for the selected location
-                let marker = new google.maps.Marker({
-                    map: map,
-                    position: {lat: 40.4378698, lng: -3.8196208},
-                    draggable: true
-                });
-
-                // Update the latitude and longitude fields when the marker is moved
-                google.maps.event.addListener(marker, 'dragend', function () {
-                    document.getElementById('latitude').value = marker.getPosition().lat();
-                    document.getElementById('longitude').value = marker.getPosition().lng();
-                });
+                // Try HTML5 geolocation to get the user's current location
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function (position) {
                         let pos = {
@@ -68,8 +75,44 @@
                             lng: position.coords.longitude
                         };
 
+                        // Center the map on the user's location
                         map.setCenter(pos);
-                        marker.setPosition(pos);
+
+                        // Add a marker for the user's location
+                        let marker = new google.maps.Marker({
+                            map: map,
+                            position: pos,
+                            draggable: true
+                        });
+
+                        // Update the latitude and longitude fields when the marker is moved
+                        google.maps.event.addListener(marker, 'dragend', function () {
+                            document.getElementById('latitude').value = marker.getPosition().lat();
+                            document.getElementById('longitude').value = marker.getPosition().lng();
+                        });
+
+                        // Move the marker when the map is moved
+                        google.maps.event.addListener(map, 'center_changed', function () {
+                            marker.setPosition(map.getCenter());
+                            document.getElementById('latitude').value = marker.getPosition().lat();
+                            document.getElementById('longitude').value = marker.getPosition().lng();
+                        });
+                    }, function () {
+                        // Handle geolocation errors
+                        handleLocationError(true, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support geolocation
+                    handleLocationError(false, map.getCenter());
+                }
+
+                function handleLocationError(browserHasGeolocation, pos) {
+                    let infoWindow = new google.maps.InfoWindow({
+                        map: map,
+                        position: pos,
+                        content: browserHasGeolocation ?
+                            'Error: The Geolocation service failed.' :
+                            'Error: Your browser doesn\'t support geolocation.'
                     });
                 }
             </script>

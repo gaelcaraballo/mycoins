@@ -1,0 +1,32 @@
+@media (max-width: 576px) {
+    .card {
+        border: none !important;
+        background-color: transparent;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+#imageSnippet {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+/*Change avatar button at the same works as input="file"*/
+.custom-input-file {
+    background-color: blue;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    font-weight: bold;
+}
+
+.avatar {
+    cursor: pointer;
+    font-size: 10000px;
+    position: absolute;
+    right: -1000px;
+}

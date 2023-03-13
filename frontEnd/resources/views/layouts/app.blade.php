@@ -3,92 +3,121 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'MyCoins') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/login_register.css')}}">
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9ejmUZ74ZX8eoeu2OIw20l6A-wW93fjI"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<style>
-    @media (max-width: 576px) {
-        .langIcon span, .profileIcon a div, .loginName div {
-            display: none;
-            width: 0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-    }
-</style>
 <body>
 <div id="app">
+    <!--Main Navigation-->
+    @auth()
+        @if(auth()->user()->isAdmin)
+            <div class="offcanvas offcanvas-start w-25" id="offcanvas" data-bs-backdrop="false">
+                <div class="offcanvas-header bg-light shadow-sm">
+                    <b id="offcanvas">Developer Menu</b>
+                    <a class="btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></a>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav row" id="menu">
+                        <li class="nav-item">
+                            <a href="{{'/'}}" class="nav-link text-dark fw-bold">
+                                <i class="fs-5 bi-house"></i><span class="ms-1">@lang('titles.home')</span></a>
+                        </li>
+                        <li>
+                            <a href="{{route('places')}}" class="nav-link text-dark fw-bold">
+                                <i class="fs-5 bi-shop-window"></i><span class="ms-1">@lang('views.places')</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('catalog', ['id' => '0']) }}" class="nav-link text-dark fw-bold">
+                                <i class="fs-5 bi-coin"></i><span class="ms-1">@lang('views.coins')</span></a>
+                        </li>
+                        <li>
+                            <a href="{{route('users')}}" class="nav-link text-dark fw-bold">
+                                <i class="fs-5 bi-people"></i><span class="ms-1">@lang('views.users')</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        @endif
+    @endauth
+    <!--Main layout-->
     <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
-        <div class="container-fluid fw-bold">
+        <div class="container-fluid fw-bold d-flex">
             <!-- Left Side Of Navbar -->
-            <div class="col d-flex justify-content-center">
-                <a class="navbar-brand" href="{{ url('/') }}">
+            <div class="col d-flex leftMenuAdmin">
+                @auth
+                    @if(auth()->user()->isAdmin)
+                        <a class="btn" onclick="event.preventDefault();" data-bs-toggle="offcanvas"
+                           data-bs-target="#offcanvas">
+                            <i class="bi bi-list" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></i>
+                        </a>
+                    @endif
+                @endauth
+                <a class="navbar-brand appName" href="{{ url('/') }}">
                     {{ config('app.name', 'MyCoins') }}
                 </a>
             </div>
             <!-- Center Of Navbar -->
-            <div class="col d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <div style="border-bottom: 2px solid darkblue">
-                    <span>{{ucfirst($detailedUser->nickname ?? File::basename(Request::path()))}}</span>
+                    <b
+                        class="text-truncate col-1">{{ucfirst($detailedUser->nickname ?? $detailedCoin->name ?? File::basename(Request::path()))}}</b>
                 </div>
             </div>
             <!-- Right Side Of Navbar -->
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex rightMenuUser">
                 <!-- Authentication Links -->
                 @guest
-                    @if (Route::has('login'))
+                    <a href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right text-dark"></i></a>
+                    @if (Route::has('login') && request()->route()->getName() != 'login')
                         <a class="logInIcon my-auto nav-link me-2 pe-2 border-end border-2 border-secondary"
-                           href="{{ route('login') }}">{{ __('titles.login') }}</a>
+                           href="{{ route('login') }}">@lang('titles.login')</a>
                     @endif
-                    @if (Route::has('register'))
+                    @if (Route::has('register') && request()->route()->getName() != 'register')
                         <a class="registerIcon my-auto nav-link pe-2 border-end border-2 border-secondary"
-                           href="{{ route('register') }}">{{ __('titles.register') }}</a>
+                           href="{{ route('register') }}">@lang('titles.register')</a>
                     @endif
                 @else
                     <div class="profileIcon nav-item dropdown">
                         <a class="nav-link d-flex" data-bs-toggle="dropdown" href="">
-                            <img alt="" id="imageSnip" width="30px"
-                                 src="{{ asset('assets/icons/'.auth()->user()->avatar) }}">
-                            <div class="my-auto dropdown-toggle">{{ auth()->user()->nickname }}</div>
+                            <img alt="" class="rounded-circle me-1" width="30px"
+                                 src="{{asset('assets/avatars/'.auth()->user()->avatar)}}">
+                            <div class="my-auto dropdown-toggle">{{auth()->user()->nickname}}</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item border-bottom fw-bold" href="/profile">
-                                {{ __('profile.profileTitle') }}</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item border-bottom fw-bold" href="{{route('profile')}}">
+                                @lang('profile.profileTitle')</a>
+                            <a class="dropdown-item" href="{{route('logout')}}"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                {{ __('titles.logout') }}
+                                @lang('titles.logout')
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </div>
                     </div>
                 @endguest
                 <div class="langIcon nav-item dropdown ms-2 my-auto">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="">
-                        <span>{{ strtoupper(App::getLocale())}}</span>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <span>{{strtoupper(App::getLocale())}}</span>
                         @if(App::getLocale() == 'en')
                             <img alt="" width="30px" src="{{asset('assets/flags/gb.png')}}">
                         @else
@@ -109,7 +138,7 @@
             </div>
         </div>
     </nav>
-    <main class="mt-4 mb-4">
+    <main>
         @yield('content')
     </main>
 </div>

@@ -25,7 +25,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Bertha von Suttner',
             'year' => array(2002, 2003, 2004, 2006, 2008, 2010, 2012, 2013, 2014, 2015, 2017, 2019, 2020, 2021, 2022),
-            'description' => 'Austrian writer and peace activist who in 1905 became the first woman to win the Nobel Peace Prize; her novel Die Waffen nieder depicted the horrors of war and became an influential work for the cause of peace',
+            'description' => 'Austrian writer and peace activist who in 1905 became the first woman to win the Nobel Peace Prize; her novel Die Waffen nieder depicted the horrors of war and became an influential work for the cause of peace.',
             'image' => 'austria.jpg',
             'country_id' => 15,
             'type' => 'circulation',
@@ -33,7 +33,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'King Albert II - 1st series',
             'year' => array(1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006),
-            'description' => 'Albert II (Albert Felix Humbert Theodore Chretien Eugene Marie) was born on June 6, 1934. He is the current King of the Belgians and a constitutional monarch, member of the former ducal house of Saxe-Coburg-Gotha',
+            'description' => 'Albert II (Albert Felix Humbert Theodore Chretien Eugene Marie) was born on June 6, 1934. He is the current King of the Belgians and a constitutional monarch, member of the former ducal house of Saxe-Coburg-Gotha.',
             'image' => 'belgium1.jpg',
             'country_id' => 22,
             'type' => 'circulation',
@@ -73,7 +73,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Map Of Estonia',
             'year' => array(2011, 2016, 2018),
-            'description' => 'Estonian euro coins feature a single design for all eight coins. This is a design by Lembit Lohmus and features a contour of Estonia together with the word Eesti (Estonia) and twelve stars, symbolic of the EU, surrounding the map. The design raised a great criticism during 2010 as many people started to protest against the design of Estonian euro coins asking to change the initial idea and follow EU Member States on assigning different symbols to different coins',
+            'description' => 'Estonian euro coins feature a single design for all eight coins. This is a design by Lembit Lohmus and features a contour of Estonia together with the word Eesti (Estonia) and twelve stars, symbolic of the EU, surrounding the map. The design raised a great criticism during 2010 as many people started to protest against the design of Estonian euro coins asking to change the initial idea and follow EU Member States on assigning different symbols to different coins.',
             'image' => 'estonia.jpg',
             'country_id' => 69,
             'type' => 'circulation',
@@ -129,7 +129,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Dante Alighieri',
             'year' => array(2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022),
-            'description' => 'The portrait is housed in the Pope Julius II Wing of the Vatican Palace',
+            'description' => 'The portrait is housed in the Pope Julius II Wing of the Vatican Palace.',
             'image' => 'italy.jpg',
             'country_id' => 109,
             'type' => 'circulation',
@@ -153,7 +153,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Grand Duke Henri',
             'year' => array(2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022),
-            'description' => 'Prince Henri became heir apparent to the Luxembourg throne on the abdication of his paternal grandmother, Grand Duchess Charlotte of Luxembourg, on 12 November 1964. On 4 March 1998, Prince Henri was appointed as Lieutenant Representative by his father, Grand Duke Jean, meaning that he assumed most of his father\'s constitutional powers. On 7 October 2000, immediately following the abdication of his father, Henri acceded as Grand Duke of Luxembourg and took the constitutional oath before the Chamber of Deputies later that day. ',
+            'description' => 'Prince Henri became heir apparent to the Luxembourg throne on the abdication of his paternal grandmother, Grand Duchess Charlotte of Luxembourg, on 12 November 1964. On 4 March 1998, Prince Henri was appointed as Lieutenant Representative by his father, Grand Duke Jean, meaning that he assumed most of his father\'s constitutional powers. On 7 October 2000, immediately following the abdication of his father, Henri acceded as Grand Duke of Luxembourg and took the constitutional oath before the Chamber of Deputies later that day.',
             'image' => 'luxembourg.jpg',
             'country_id' => 129,
             'type' => 'circulation',
@@ -177,7 +177,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Prince Albert II',
             'year' => array(2006, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022),
-            'description' => 'Albert II, Prince of Monaco (Albert Alexandre Louis Pierre Grimaldi), styled His Serene Highness The Sovereign Prince of Monaco, was the head of the House of Grimaldi and the ruler of the Principality of Monaco. He is the son of Rainier III of Monaco and Grace, Princess of Monaco, and the brother of Caroline, Princess of Hanover and Princess Stephanie of Monaco',
+            'description' => 'Albert II, Prince of Monaco (Albert Alexandre Louis Pierre Grimaldi), styled His Serene Highness The Sovereign Prince of Monaco, was the head of the House of Grimaldi and the ruler of the Principality of Monaco. He is the son of Rainier III of Monaco and Grace, Princess of Monaco, and the brother of Caroline, Princess of Hanover and Princess Stephanie of Monaco.',
             'image' => 'monaco2.jpg',
             'country_id' => 146,
             'type' => 'circulation',
@@ -193,7 +193,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'King Willem-Alexander',
             'year' => array(2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022),
-            'description' => 'Willem-Alexander is the King of the Kingdom of the Netherlands, consisting of the countries of the Netherlands (including the Caribbean Netherlands), Curaçao, Aruba, and Sint Maarten. He is head of the Dutch royal house and the House of Amsberg. The design shows at the right side of the effigy three vertical lines. Between the first and the second line from the right, the Dutch mint master mark, the year of issuance and the mint mark. Between the second and the third line from the right the text "Willem-Alexander" and after the third line from the right the text "Koning der Nederlanden"',
+            'description' => 'Willem-Alexander is the King of the Kingdom of the Netherlands, consisting of the countries of the Netherlands (including the Caribbean Netherlands), Curaçao, Aruba, and Sint Maarten. He is head of the Dutch royal house and the House of Amsberg. The design shows at the right side of the effigy three vertical lines. Between the first and the second line from the right, the Dutch mint master mark, the year of issuance and the mint mark. Between the second and the third line from the right the text "Willem-Alexander" and after the third line from the right the text "Koning der Nederlanden".',
             'image' => 'netherlands2.jpg',
             'country_id' => 156,
             'type' => 'circulation',
@@ -201,7 +201,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Royal Seal of 1144',
             'year' => array(2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022),
-            'description' => 'The Royal Seal from 1144 surrounded by seven castles and five shields with a ring of stars representing the dialog between the different European Countries',
+            'description' => 'The Royal Seal from 1144 surrounded by seven castles and five shields with a ring of stars representing the dialog between the different European Countries.',
             'image' => 'portugal.jpg',
             'country_id' => 178,
             'type' => 'circulation',
@@ -209,7 +209,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Palazzo Pubblico',
             'year' => array(2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016),
-            'description' => 'Saint Marinus was the founder of a chapel and monastery, in 301, from where the world\'s oldest surviving republic, San Marino, grew. He is venerated solely in the Roman Catholic Church and the coin depicts his portrait based on a painting by G.B. Urbinelli. ',
+            'description' => 'Saint Marinus was the founder of a chapel and monastery, in 301, from where the world\'s oldest surviving republic, San Marino, grew. He is venerated solely in the Roman Catholic Church and the coin depicts his portrait based on a painting by G.B. Urbinelli.',
             'image' => 'sanmarino1.jpg',
             'country_id' => 191,
             'type' => 'circulation',
@@ -217,7 +217,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Portrait of Saint Marino',
             'year' => array(2017, 2018, 2019, 2020, 2021, 2022),
-            'description' => 'Saint Marinus was the founder of a chapel and monastery, in 301, from where the world\'s oldest surviving republic, San Marino, grew. He is venerated solely in the Roman Catholic Church and the coin depicts his portrait based on a painting by G.B. Urbinelli. ',
+            'description' => 'Saint Marinus was the founder of a chapel and monastery, in 301, from where the world\'s oldest surviving republic, San Marino, grew. He is venerated solely in the Roman Catholic Church and the coin depicts his portrait based on a painting by G.B. Urbinelli.',
             'image' => 'sanmarino2.jpg',
             'country_id' => 191,
             'type' => 'circulation',
@@ -241,7 +241,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'King Juan Carlos I - 1st series',
             'year' => array(1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009),
-            'description' => 'Juan Carlos I was born on January 5, 1938 and is the reigning King of Spain. His name, when rarely anglicised, is rendered as John Charles Alphonse Victor Maria of Bourbon (and Bourbon-Two Sicilies)',
+            'description' => 'Juan Carlos I was born on January 5, 1938 and is the reigning King of Spain. His name, when rarely anglicised, is rendered as John Charles Alphonse Victor Maria of Bourbon (and Bourbon-Two Sicilies).',
             'image' => 'spain1.jpg',
             'country_id' => 205,
             'type' => 'circulation',
@@ -249,7 +249,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'King Juan Carlos I - 2nd series',
             'year' => array(2010, 2011, 2012, 2013, 2014),
-            'description' => 'Juan Carlos I was born on January 5, 1938 and is the reigning King of Spain. His name, when rarely anglicised, is rendered as John Charles Alphonse Victor Maria of Bourbon (and Bourbon-Two Sicilies)',
+            'description' => 'Juan Carlos I was born on January 5, 1938 and is the reigning King of Spain. His name, when rarely anglicised, is rendered as John Charles Alphonse Victor Maria of Bourbon (and Bourbon-Two Sicilies).',
             'image' => 'spain2.jpg',
             'country_id' => 205,
             'type' => 'circulation',
@@ -265,7 +265,7 @@ class CoinsSeeder extends Seeder
         Coin::create([
             'name' => 'Pope John Paul II',
             'year' => array(2002, 2003, 2004, 2005),
-            'description' => 'Pope John Paul II, 18 May 1920 – 2 April 2005) served as Supreme Pontiff of the Catholic Church and Sovereign of Vatican City from 16 October 1978 until his death almost 27 years later. His was the second-longest pontificate; only Pope Pius IX served longer. He was the only Polish Pope, and was the first non-Italian Pope since Dutch Pope Adrian VI in the 1520s',
+            'description' => 'Pope John Paul II, 18 May 1920 – 2 April 2005) served as Supreme Pontiff of the Catholic Church and Sovereign of Vatican City from 16 October 1978 until his death almost 27 years later. His was the second-longest pontificate; only Pope Pius IX served longer. He was the only Polish Pope, and was the first non-Italian Pope since Dutch Pope Adrian VI in the 1520s.',
             'image' => 'vatican1.jpg',
             'country_id' => 97,
             'type' => 'circulation',

@@ -28,13 +28,13 @@ class StatController extends Controller
         $totalCoinsUserPerCountry = Coin::join('collection', 'coins.id', '=', 'collection.coin_id')
             ->join('countries', 'coins.country_id', '=', 'countries.id')
             ->where('collection.user_id', $userId)
-            ->select('countries.country_name', 'countries.id', DB::raw('count(coins.id) as coin_count'))
+            ->select('countries.country_name', 'countries.id', DB::raw('count(DISTINCT coins.id) as coin_count'))
             ->groupBy('countries.country_name', 'countries.id')
             ->get();
         foreach ($countries as $country) {
             $country->coinCount = $countsPerCountry[$country->country_name];
-            foreach($totalCoinsUserPerCountry as $coinUserPerCountry){
-                if ($coinUserPerCountry->country_name == $country->country_name){
+            foreach ($totalCoinsUserPerCountry as $coinUserPerCountry) {
+                if ($coinUserPerCountry->country_name == $country->country_name) {
                     $country->coinCountUser = $coinUserPerCountry->coin_count;
                 }
             }

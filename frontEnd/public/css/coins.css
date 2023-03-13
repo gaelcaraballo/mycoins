@@ -1,0 +1,26 @@
+@media (max-width: 1400px) {
+    .coinName {
+        white-space: normal !important;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        background-color: #212529 !important;
+    }
+
+    .coinsDiv {
+        justify-content: center;
+        border: none !important;
+        width: 100vw !important;
+        border-radius: 0 !important;
+    }
+
+    .detailedCoinImage {
+        align-items: center !important;
+    }
+}
+
+.searchDiv {
+    height: 200px;
+}

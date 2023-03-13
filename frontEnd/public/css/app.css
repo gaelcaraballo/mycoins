@@ -1,0 +1,42 @@
+@media (max-width: 576px) {
+    *{
+        overflow-x: hidden;
+    }
+    .appName, .langIcon span, .loginName div, .profileIcon a div, .placeMap, .cardTitleProfile, .searchDiv,
+    .usersDiv h2, .collection, .cardTitleEnter {
+        display: none !important;
+    }
+
+    #offcanvas {
+        width: 45% !important
+    }
+
+    .rightMenuUser {
+        justify-content: flex-end !important
+    }
+
+    .leftMenuAdmin {
+        justify-content: start !important
+    }
+
+    .bi-box-arrow-in-right {
+        font-size: 20px;
+        visibility: visible !important;
+    }
+
+    .logInIcon, .registerIcon {
+        display: none !important;
+    }
+}
+
+.langIcon {
+    cursor: pointer;
+}
+
+.leftMenuAdmin, .rightMenuUser {
+    justify-content: center
+}
+
+.bi-box-arrow-in-right {
+    visibility: hidden;
+}

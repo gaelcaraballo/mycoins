@@ -24,4 +24,5 @@ return [
     'activeUsers' => 'Usuarios activos',
     'laravelBlocker' => 'Bloqueador',
     'laravelroles' => 'Roles de Administración',
+    'coins' => 'monedas'
 ];

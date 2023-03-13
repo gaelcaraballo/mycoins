@@ -17,7 +17,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaXIqLyJLc1bPizPIVYWUlf92vxs8wAkY"></script>
     <div class="container-fluid">
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
-            <h2>{{__('views.places')}}</h2>
+            <h2>@lang('views.places')</h2>
             <form method="post" action="">
                 @csrf
                 <input type="text" name="name" placeholder="Place name">

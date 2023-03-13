@@ -8,19 +8,19 @@
         <div class="border d-flex">
             <div class="m-1 col-3 d-flex justify-content-center row">
                 <img alt="" class="w-100" src="{{asset('assets/icons/'.$detailedUser->avatar)}}">
-                {{--<button class="border rounded" href="">{{__('views.sendPrivMsg')}}</button>--}}
+                {{--<button class="border rounded" href="">@lang('views.sendPrivMsg')</button>--}}
             </div>
             <div class="col-9 m-3">
                 <div>
-                    {{__('views.localization')}}:
+                    @lang('views.localization'):
                     <span class="fw-bold">{{$detailedUser->country->country_name}}</span>
                 </div>
                 <div>
-                    {{__('views.collection')}}:
+                    @lang('views.collection'):
                     <span class="fw-bold text-decoration-none">{{$countCollection}}</span>
                 </div>
                 <div>
-                    {{__('views.createdAt')}}:
+                    @lang('views.memberSince'):
                     <span class="fw-bold">{{Carbon::parse($detailedUser->created_at)->format('d M, Y')}}</span>
                 </div>
             </div>

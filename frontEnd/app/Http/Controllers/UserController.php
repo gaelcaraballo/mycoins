@@ -28,15 +28,15 @@ class UserController extends Controller
 
     public function selectCountry(Request $request)
     {
-        if ($request->selectCountry == null) {
-            $users = User::select("id", "nickname", "avatar", "country_id", "created_at",
-                DB::raw("(SELECT COUNT(*) FROM collection WHERE collection.user_id = users.id) as coin_count"))
-                ->where("id", "!=", auth()->id())->get();
-        } else {
-            $users = User::select("id", "nickname", "avatar", "country_id", "created_at",
-                DB::raw("(SELECT COUNT(*) FROM collection WHERE collection.user_id = users.id) as coin_count"))
-                ->where("country_id", "=", $request->selectCountry)->get();
-        }
+        $validated = $request->validate([
+            'selectCountry' => 'nullable|exists:countries,id'
+        ]);
+        $users = User::select("id", "nickname", "avatar", "country_id", "created_at",
+            DB::raw("(SELECT COUNT(*) FROM collection WHERE collection.user_id = users.id) as coin_count"))
+            ->where("id", "!=", auth()->id())
+            ->when($validated['selectCountry'], function ($query, $selectCountry) {
+                return $query->where("country_id", "=", $selectCountry);
+            })->get();
         $countries = User::join('countries', 'users.country_id', '=', 'countries.id')
             ->where("users.id", "!=", auth()->id())
             ->select('countries.country_name', 'countries.id')->distinct()->pluck('country_name', 'id');
@@ -46,22 +46,22 @@ class UserController extends Controller
 
     public function detailedUser($id): View|Factory|RedirectResponse|Application
     {
+        $detailedUser = User::find($id);
         if (auth()->id() == $id) {
             return redirect()->action([ProfileController::class, "profile"]);
         }
-        if (!User::find($id)) {
+        if (!$detailedUser) {
             return redirect()->action([UserController::class, "all"]);
         }
         return view("users/detailedUser",
-            ["detailedUser" => User::findOrFail($id),
+            ["detailedUser" => $detailedUser,
                 "coins" => Coin::join('collection', 'coins.id', '=', 'collection.coin_id')
                     ->select('coins.*')->where('collection.user_id', $id)->get(),
                 "countCollection" => Collection::where('user_id', $id)->count()]);
     }
 
-    public function delete($id)
+    public function delete(User $user)
     {
-        $user = User::findOrFail($id);
         $user->delete();
         return redirect("users");
     }

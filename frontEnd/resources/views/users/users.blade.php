@@ -1,57 +1,45 @@
 @extends('layouts.app')
 @section('content')
-    <style>
-        @media (max-width: 576px) {
-            .searchDiv{
-                display: none;
-            }
-            .coinsDiv {
-                width: 100vw !important;
-            }
-
-            .coinsDiv h2, .collection {
-                display: none;
-            }
-
-            .coinsDiv div {
-                border: none !important;
-            }
-        }
-    </style>
-    <div class="container-fluid">
-        <div class="coinsDiv container col-12 col-  sm-12 col-md-9 col-lg-8 col-xl-7">
-            <h2>{{__('views.users')}}</h2>
-            <div class="searchDiv">
-                {!! Form::open(['route' => 'users.selectCountry']) !!}
-                {!! Form::select('selectCountry', $countries, request()->input('selectCountry'),['class' => 'form-select', 'onchange' => 'this.form.submit()', 'placeholder' => 'Select a Country'] ) !!}
-                {!! Form::close() !!}
-            </div>
+    <link rel="stylesheet" href="{{asset('css/users.css')}}">
+    <div class="container-fluid mt-4 mb-4">
+        <div class="usersDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
+            <h2>@lang('views.users')</h2>
+            {!! Form::open(['route' => 'users.selectCountry']) !!}
+            {!! Form::select('selectCountry', $countries, request()->input('selectCountry'),['class' => 'form-select', 'onchange' => 'this.form.submit()', 'placeholder' => 'Select a Country'] ) !!}
+            {!! Form::close() !!}
             <div class="border rounded mt-2 bg-dark">
                 @foreach($users as $user)
                     <div class="bg-light border rounded m-2 p-1">
-                        <div class="row">
-                            <a href="{{ route('users.detailedUser', $user->id) }}" class="text-decoration-none">
-                                <div class="image-holder-forSale d-flex align-items-center justify-content-start">
-                                    <div class="col-2">
-                                        <img alt="" class="flagIcon w-25 h-25 border img-fluid"
-                                             src="{{asset('/assets/flags/'.$user->country->country_image)}}">
-                                        <img alt="" class="w-50 img-fluid"
-                                             src="{{asset('/assets/icons/'.$user->avatar)}}">
-                                    </div>
-                                    <div>
-                                        <h5>{{$user->nickname}}</h5>
-                                        <h6 class="text-secondary">{{$user->country->country_name}}</h6>
-                                    </div>
-                                    <div class="me-5 collection ms-auto">
-                                        <span class="text-secondary">Collection</span>
-                                        <h5 class="text-center">
-                                            <span
-                                                class="text-decoration-none">{{$user->coin_count}}</span>
-                                        </h5>
+                        <a href="{{ route('users.detailedUser', $user->id) }}" class="text-decoration-none">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <div class="d-flex align-items-center">
+                                    <img width="50px" class="img-fluid rounded-circle"
+                                         src="{{asset('/assets/avatars/'.$user->avatar)}}" alt="">
+                                    <div class="m-1 text-dark">
+                                        <h5 class="mb-auto">{{$user->nickname}}</h5>
+                                        <div class="d-flex">
+                                            <img alt="" class="flagIcon border img-fluid" width="30px"
+                                                 src="{{asset('/assets/flags/'.$user->country->country_image)}}">
+                                            <span class="mt-auto">{{$user->country->country_name}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
+                                <div class="me-2 ms-auto">
+                                    @if(auth()->user()->isAdmin)
+                                        <a class="btn btn-danger" id="deleteButton"
+                                           onclick="return confirm('Are you sure you want to delete this user? This is an irreversible action!')"
+                                           href="{{ route('users.delete', $user->id) }}">
+                                            <i class="bi bi-x-circle"></i></a>
+                                    @endif
+                                </div>
+                                <div class="me-5 collection">
+                                    <span class="text-secondary">Collection</span>
+                                    <h5 class="text-center">
+                                        <span class="text-decoration-none">{{$user->coin_count}}</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 @endforeach
             </div>

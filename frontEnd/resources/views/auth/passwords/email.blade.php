@@ -4,18 +4,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <h5 class="card-header text-center">{{ __('auth.resetPassword') }}</h5>
+                    <h5 class="card-header text-center">@lang('auth.resetPassword')</h5>
                     <div class="card-body">
                         @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
+                            <div class="alert alert-success" role="alert">{{session('status')}}</div>
                         @endif
-                        <form method="POST" action="{{ route('password.email') }}">
+                        <form method="POST" action="{{route('password.email')}}">
                             @csrf
                             <div class="row mb-3">
                                 <label for="email"
-                                       class="col-md-4 col-form-label text-md-end">{{ __('auth.email') }}</label>
+                                       class="col-md-4 col-form-label text-md-end">@lang('auth.email')</label>
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                            class="form-control @error('email') is-invalid @enderror" name="email"
@@ -29,9 +27,7 @@
                             </div>
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('auth.sendResetLink') }}
-                                    </button>
+                                    <button type="submit" class="btn btn-primary">@lang('auth.sendResetLink')</button>
                                 </div>
                             </div>
                         </form>
