@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Fixed the map error, now it's properly visible">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/public/js/places/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/js/places/places.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +207,7 @@
       <updated>1680094723461</updated>
       <workItem from="1680094725217" duration="11598000" />
       <workItem from="1680164103958" duration="15549000" />
-      <workItem from="1680183861334" duration="12440000" />
+      <workItem from="1680183861334" duration="13305000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -295,7 +293,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680208218635</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="-Fixed the map error, now it's properly visible">
+      <created>1680209271038</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680209271038</updated>
+    </task>
+    <task id="LOCAL-00014" summary="-Fixed the map error, now it's properly visible">
+      <created>1680209305173</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680209305173</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

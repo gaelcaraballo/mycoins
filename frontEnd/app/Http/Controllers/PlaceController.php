@@ -19,7 +19,11 @@ class PlaceController extends Controller
     public function searchPlace(Request $request)
     {
         $query = $request->input('searchPlace');
-        $places = Place::where('city_name', 'LIKE', "%$query%")->paginate(20);
+        $places = Place::where('city_name', 'LIKE', "%$query%")->orWhere('postcode', 'LIKE', "%$query%")
+            ->orWhere('street_name', 'LIKE', "%$query%")->orWhereHas('country', function ($q) use ($query) {
+                $q->where('country_name', 'LIKE', "%$query%");
+            })
+            ->paginate(20);
         if (count($places) === 0) {
             $places = 0;
         }
