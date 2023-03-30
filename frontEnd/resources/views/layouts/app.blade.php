@@ -28,52 +28,48 @@
 <body>
 <div id="app">
     <!--Main Navigation-->
-    @auth()
-        @if(auth()->user()->isAdmin)
-            <div class="offcanvas offcanvas-start w-25" id="offcanvas" data-bs-backdrop="false">
-                <div class="offcanvas-header bg-light shadow-sm">
-                    <b id="offcanvas">Developer Menu</b>
-                    <a class="btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></a>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="nav row" id="menu">
-                        <li class="nav-item">
-                            <a href="{{'/'}}" class="nav-link text-dark fw-bold">
-                                <i class="fs-5 bi-house"></i><span class="ms-1">@lang('titles.home')</span></a>
-                        </li>
-                        <li>
-                            <a href="{{route('places')}}" class="nav-link text-dark fw-bold">
-                                <i class="fs-5 bi-shop-window"></i><span class="ms-1">@lang('views.places')</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ route('catalog', ['id' => '0']) }}" class="nav-link text-dark fw-bold">
-                                <i class="fs-5 bi-coin"></i><span class="ms-1">@lang('views.coins')</span></a>
-                        </li>
-                        <li>
-                            <a href="{{route('users')}}" class="nav-link text-dark fw-bold">
-                                <i class="fs-5 bi-people"></i><span class="ms-1">@lang('views.users')</span></a>
-                        </li>
-                    </ul>
-                </div>
+    @if(auth()->check() && auth()->user()->isAdmin)
+        <div class="offcanvas offcanvas-start w-25" id="offcanvas" data-bs-backdrop="false">
+            <div class="offcanvas-header bg-light shadow-sm">
+                <b id="offcanvas">Developer Menu</b>
+                <a class="btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></a>
             </div>
-        @endif
-    @endauth
+            <div class="offcanvas-body">
+                <ul class="nav row" id="menu">
+                    <li class="nav-item">
+                        <a href="{{'/'}}" class="nav-link text-dark fw-bold">
+                            <i class="fs-5 bi-house"></i><span class="ms-1">@lang('titles.home')</span></a>
+                    </li>
+                    <li>
+                        <a href="{{route('places')}}" class="nav-link text-dark fw-bold">
+                            <i class="fs-5 bi-shop-window"></i><span class="ms-1">@lang('views.places')</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ route('catalog', ['id' => '0']) }}" class="nav-link text-dark fw-bold">
+                            <i class="fs-5 bi-coin"></i><span class="ms-1">@lang('views.coins')</span></a>
+                    </li>
+                    <li>
+                        <a href="{{route('users')}}" class="nav-link text-dark fw-bold">
+                            <i class="fs-5 bi-people"></i><span class="ms-1">@lang('views.users')</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    @endif
     <!--Main layout-->
     <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
         <div class="container-fluid fw-bold d-flex">
             <!-- Left Side Of Navbar -->
             <div class="col d-flex leftMenuAdmin">
-                @auth
-                    @if(auth()->user()->isAdmin)
-                        <a class="btn" onclick="event.preventDefault();" data-bs-toggle="offcanvas"
-                           data-bs-target="#offcanvas">
-                            <i class="bi bi-list" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></i>
-                        </a>
-                    @endif
-                @endauth
-                <a class="navbar-brand appName" href="{{ url('/') }}">
-                    {{ config('app.name', 'MyCoins') }}
-                </a>
+                @if(auth()->check() && auth()->user()->isAdmin)
+                    <a class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
+                        <i class="bi bi-list"></i><b class="appName ms-1">{{ config('app.name', 'MyCoins') }}</b>
+                    </a>
+                @else
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <i class="bi bi-house"></i><b class="appName ms-1">{{ config('app.name', 'MyCoins') }}</b>
+                    </a>
+                @endif
             </div>
             <!-- Center Of Navbar -->
             <div class="d-flex justify-content-center">
