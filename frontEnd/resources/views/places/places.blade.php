@@ -3,7 +3,11 @@
     <link rel="stylesheet" href="{{asset('css/places.css')}}">
     <div class="container-fluid mb-4 mt-4">
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
-            <h2>@lang('views.places')</h2>
+            <div class="d-flex justify-content-between mb-1">
+                <h2>@lang('views.places')</h2>
+                <a type="text" href="{{route('places.addPlace')}}"
+                   class="ms-auto btn btn-success">@lang('views.addPlace')</a>
+            </div>
             <div class="d-flex">
                 {!!Form::open(['route' => 'places.searchPlace', 'method' => 'get', 'class'=> 'd-flex'])!!}
                 {!!Form::text('searchPlace', null, ['placeholder' => __('views.search'), 'class' => 'form-control', 'id'=>'search-input'])!!}
@@ -12,11 +16,12 @@
                     {!!Form::button((__($query).'<i class="bi bi-x"></i>'), ['class' => 'ms-1 btn border d-flex', 'onclick'=> "document.getElementById('search-btn').click()"])!!}
                 @endisset
                 {!!Form::close()!!}
-                <a type="text" href="{{route('places.addPlace')}}"
-                   class="ms-auto btn btn-success text-truncate">@lang('views.addPlace')</a>
             </div>
             @if(empty($places))
-                <div id="search-results" class="rounded mt-1">No places where found</div>
+                <div id="search-results" class="rounded mt-1 text-danger row">
+                    <b>@lang('views.noPlaceFound')</b>
+                    <img src="{{asset('assets/otherImages/ruinsNoCoinFound.png')}}" alt="" width="50%">
+                </div>
             @else
                 <div class="border rounded mt-1">
                     @foreach($places as $place)
@@ -41,12 +46,12 @@
                                                     class="m-1 btn @if($place->isAccepted) btn-success @else btn-warning @endif">
                                                 <i class="bi @if($place->isAccepted) bi-check-circle @else bi-clock @endif mb-auto mt-auto"></i>
                                             </button>
-                                            <button class="m-1 btn btn-danger" id="deleteButton"
-                                                    href="{{ route('places.delete', $place->id) }}"
-                                                    onclick="return confirm('Are you sure you want to delete this place?')">
-                                                <i class="bi bi-x-circle mb-auto mt-auto"></i>
-                                            </button>
                                         </form>
+                                        <a class="m-1 btn btn-danger" id="deleteButton"
+                                           href="{{ route('places.delete', $place->id) }}"
+                                           onclick="return confirm('Are you sure you want to delete this place?')">
+                                            <i class="bi bi-x-circle mb-auto mt-auto"></i>
+                                        </a>
                                     @else
                                         <button
                                             class="ms-auto btn @if($place->isAccepted) btn-success @else btn-warning @endif">

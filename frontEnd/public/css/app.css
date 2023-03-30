@@ -1,7 +1,4 @@
 @media (max-width: 576px) {
-    *{
-        overflow-x: hidden;
-    }
     .appName, .langIcon span, .loginName div, .profileIcon a div, .placeMap, .cardTitleProfile, .searchDiv,
     .usersDiv h2, .collection, .cardTitleEnter {
         display: none !important;

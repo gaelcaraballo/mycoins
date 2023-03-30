@@ -3,12 +3,12 @@
     <link rel="stylesheet" href="{{asset('css/places.css')}}">
     <div class="container-fluid mt-4 mb-4">
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
-            <div class="d-flex justify-content-between mt-1 border-bottom">
-                <h2>@lang('views.places')</h2>
-                <button type="submit" class="btn btn-success mb-1">@lang('views.addPlace')</button>
-            </div>
-            <div class="mt-1">
-                <form action="{{route('places.store')}}" method="POST">
+            <form action="{{route('places.store')}}" method="POST">
+                <div class="d-flex justify-content-between mt-1 border-bottom">
+                    <h2>@lang('views.places')</h2>
+                    <button type="submit" class="btn btn-success mb-1">@lang('views.addPlace')</button>
+                </div>
+                <div class="mt-1">
                     @csrf
                     <div class="mb-2">
                         <div class="row row-cols-2">
@@ -59,63 +59,63 @@
                          style="height: 300px;"></div>
                     <input type="hidden" name="latitude" id="latitude">
                     <input type="hidden" name="longitude" id="longitude">
-                </form>
-            </div>
-            <script>
-                // Initialize the map
-                let map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 14
-                });
 
-                // Try HTML5 geolocation to get the user's current location
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function (position) {
-                        let pos = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
+                </div>
+                <script>
+                    // Initialize the map
+                    let map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 14
+                    });
 
-                        // Center the map on the user's location
-                        map.setCenter(pos);
+                    // Try HTML5 geolocation to get the user's current location
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function (position) {
+                            let pos = {
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude
+                            };
 
-                        // Add a marker for the user's location
-                        let marker = new google.maps.Marker({
+                            // Center the map on the user's location
+                            map.setCenter(pos);
+
+                            // Add a marker for the user's location
+                            let marker = new google.maps.Marker({
+                                map: map,
+                                position: pos,
+                            });
+
+                            // Update the latitude and longitude fields when the marker is moved
+                            google.maps.event.addListener(marker, 'dragend', function () {
+                                document.getElementById('latitude').value = marker.getPosition().lat();
+                                document.getElementById('longitude').value = marker.getPosition().lng();
+                            });
+
+                            // Move the marker when the map is moved
+                            google.maps.event.addListener(map, 'center_changed', function () {
+                                marker.setPosition(map.getCenter());
+                                document.getElementById('latitude').value = marker.getPosition().lat();
+                                document.getElementById('longitude').value = marker.getPosition().lng();
+                            });
+                        }, function () {
+                            // Handle geolocation errors
+                            handleLocationError(true, map.getCenter());
+                        });
+                    } else {
+                        // Browser doesn't support geolocation
+                        handleLocationError(false, map.getCenter());
+                    }
+
+                    function handleLocationError(browserHasGeolocation, pos) {
+                        let infoWindow = new google.maps.InfoWindow({
                             map: map,
                             position: pos,
-                            draggable: true
+                            content: browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.'
                         });
-
-                        // Update the latitude and longitude fields when the marker is moved
-                        google.maps.event.addListener(marker, 'dragend', function () {
-                            document.getElementById('latitude').value = marker.getPosition().lat();
-                            document.getElementById('longitude').value = marker.getPosition().lng();
-                        });
-
-                        // Move the marker when the map is moved
-                        google.maps.event.addListener(map, 'center_changed', function () {
-                            marker.setPosition(map.getCenter());
-                            document.getElementById('latitude').value = marker.getPosition().lat();
-                            document.getElementById('longitude').value = marker.getPosition().lng();
-                        });
-                    }, function () {
-                        // Handle geolocation errors
-                        handleLocationError(true, map.getCenter());
-                    });
-                } else {
-                    // Browser doesn't support geolocation
-                    handleLocationError(false, map.getCenter());
-                }
-
-                function handleLocationError(browserHasGeolocation, pos) {
-                    let infoWindow = new google.maps.InfoWindow({
-                        map: map,
-                        position: pos,
-                        content: browserHasGeolocation ?
-                            'Error: The Geolocation service failed.' :
-                            'Error: Your browser doesn\'t support geolocation.'
-                    });
-                }
-            </script>
+                    }
+                </script>
+            </form>
         </div>
     </div>
 @endsection

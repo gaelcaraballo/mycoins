@@ -28,5 +28,6 @@ return [
     'allYears' => 'Tous années',
     'coins' => 'Monnaie',
     'description' => 'Description',
-    'createdAt' => 'Créé à'
+    'createdAt' => 'Créé à',
+    'noPlaceFound' => 'Désolé, nous n\'avons trouvé aucun endroit...'
 ];
