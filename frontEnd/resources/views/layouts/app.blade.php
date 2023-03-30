@@ -1,4 +1,4 @@
-@php use Illuminate\Support\Facades\Route; @endphp
+@php  @endphp
     <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -31,11 +31,11 @@
     @if(auth()->check() && auth()->user()->isAdmin)
         <div class="offcanvas offcanvas-start w-25" id="offcanvas" data-bs-backdrop="false">
             <div class="offcanvas-header bg-light shadow-sm">
-                <b id="offcanvas">Developer Menu</b>
+                <b>Developer Menu</b>
                 <a class="btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></a>
             </div>
             <div class="offcanvas-body">
-                <ul class="nav row" id="menu">
+                <ul class="nav row">
                     <li class="nav-item">
                         <a href="{{'/'}}" class="nav-link text-dark fw-bold">
                             <i class="fs-5 bi-house"></i><span class="ms-1">@lang('titles.home')</span></a>
@@ -58,7 +58,7 @@
     @endif
     <!--Main layout-->
     <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
-        <div class="container-fluid fw-bold d-flex">
+        <div class="container-fluid fw-bold">
             <!-- Left Side Of Navbar -->
             <div class="col d-flex leftMenuAdmin">
                 @if(auth()->check() && auth()->user()->isAdmin)
@@ -72,7 +72,7 @@
                 @endif
             </div>
             <!-- Center Of Navbar -->
-            <div class="d-flex justify-content-center">
+            <div class="justify-content-center">
                 <div style="border-bottom: 2px solid darkblue">
                     <b
                         class="text-truncate col-1">{{ucfirst($detailedUser->nickname ?? $detailedCoin->name ?? File::basename(Request::path()))}}</b>
@@ -83,14 +83,14 @@
                 <!-- Authentication Links -->
                 @guest
                     <a href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right text-dark"></i></a>
-                    @if (Route::has('login') && request()->route()->getName() != 'login')
+                    @unless(request()->route()->getName() == 'login')
                         <a class="logInIcon my-auto nav-link me-2 pe-2 border-end border-2 border-secondary"
                            href="{{ route('login') }}">@lang('titles.login')</a>
-                    @endif
-                    @if (Route::has('register') && request()->route()->getName() != 'register')
+                    @endunless
+                    @unless(request()->route()->getName() == 'register')
                         <a class="registerIcon my-auto nav-link pe-2 border-end border-2 border-secondary"
                            href="{{ route('register') }}">@lang('titles.register')</a>
-                    @endif
+                    @endunless
                 @else
                     <div class="profileIcon nav-item dropdown">
                         <a class="nav-link d-flex" data-bs-toggle="dropdown" href="">

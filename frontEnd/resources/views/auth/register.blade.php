@@ -13,7 +13,7 @@
                                 <label for="nickname"
                                        class="col-md-4 col-form-label text-md-end">@lang('auth.nickname')</label>
                                 <div class="col-md-6">
-                                    <input id="nickname" type="text"
+                                    <input required id="nickname" type="text"
                                            class="form-control @error('nickname') is-invalid @enderror" name="nickname"
                                            value="{{ old('nickname') }}" autocomplete="nickname" autofocus>
                                     @error('nickname')
@@ -27,7 +27,7 @@
                                 <label for="email"
                                        class="col-md-4 col-form-label text-md-end">@lang('auth.email')</label>
                                 <div class="col-md-6">
-                                    <input id="email" type="email" placeholder="example@example.com"
+                                    <input required id="email" type="email" placeholder="example@example.com"
                                            class="form-control @error('email') is-invalid @enderror" name="email"
                                            value="{{ old('email') }}" autocomplete="email">
                                     @error('email')
@@ -41,7 +41,7 @@
                                 <label for="password"
                                        class="col-md-4 col-form-label text-md-end">@lang('auth.password')</label>
                                 <div class="col-md-6">
-                                    <input id="password" type="password" placeholder="********"
+                                    <input required id="password" type="password" placeholder="********"
                                            class="form-control @error('password') is-invalid @enderror" name="password"
                                            autocomplete="new-password">
                                     @error('password')
@@ -55,7 +55,8 @@
                                 <label for="password-confirm"
                                        class="col-md-4 col-form-label text-md-end">@lang('auth.confirmPassword')</label>
                                 <div class="col-md-6">
-                                    <input autocomplete="new-password" class="form-control" id="password-confirm"
+                                    <input required autocomplete="new-password" class="form-control"
+                                           id="password-confirm"
                                            name="password_confirmation" type="password">
                                 </div>
                             </div>
@@ -63,13 +64,17 @@
                                 <label for="country"
                                        class="col-md-4 col-form-label text-md-end">@lang('auth.country')</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" id="country_id" name="country_id">
+                                    <select class="form-select @error('country_id') is-invalid @enderror"
+                                            id="country_id" name="country_id" required>
                                         <option value="" hidden>--@lang('views.selectCountry')--</option>
                                         @foreach(Country::select('id','country_name')->get() as $country)
                                             <option
-                                                value="{{$country->id}}" {{ old('country_id') == $country->id ? 'selected' : '' }}>{{$country->country_name}}</option>
+                                                value="{{$country->id}}" {{ old('country_id') == $country->id ? 'selected' : '' }}>{{ $country->country_name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('country_id')
+                                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">

@@ -7,7 +7,7 @@
         </h2>
         <div class="border d-flex">
             <div class="m-1 col-3 d-flex justify-content-center row">
-                <img alt="" class="w-100" src="{{asset('assets/icons/'.$detailedUser->avatar)}}">
+                <img alt="" class="w-100 rounded-circle" src="{{asset('assets/avatars/'.$detailedUser->avatar)}}">
                 {{--<button class="border rounded" href="">@lang('views.sendPrivMsg')</button>--}}
             </div>
             <div class="col-9 m-3">
@@ -29,21 +29,34 @@
             {{$detailedUser->nickname. "'s collection"}}
         </h4>
         <div class="border d-flex m-1 bg-dark text-white row">
-            @foreach($coins as $coin)
-                <div class="border col-3" title="{{$coin->description}}">
-                    <div class="d-flex m-1 justify-content-center">
-                        <div class="w-25">
-                            <img class="w-75 me-auto border border-secondary"
-                                 src="{{asset('assets/flags/'.$coin->country->country_image)}}" alt="">
-                        </div>
-                        <div class="text-center align-items-center bottom">
-                            <small>{{$coin->name}}</small>
-                        </div>
-                    </div>
-                    <img src="{{asset('/assets/coins/'.$coin->image)}}" alt=""
-                         class="w-75 m-3 img-fluid rounded-circle">
+            @if(empty($coins))
+                <div id="search-results" class="rounded mt-1 text-danger row">
+                    <b>@lang('views.noPlaceFound')</b>
+                    <img src="{{asset('assets/otherImages/ruinsNoCoinFound.png')}}" alt="" width="50%">
                 </div>
-            @endforeach
+            @else
+                @foreach($coins as $coin)
+                    <div class="border col-3" title="{{$coin->description}}">
+                        <div class="d-flex m-1 justify-content-center">
+                            <div class="w-25">
+                                <img class="w-75 me-auto border border-secondary"
+                                     src="{{asset('assets/flags/'.$coin->country->country_image)}}" alt="">
+                            </div>
+                            <div class="text-center align-items-center bottom">
+                                <small>{{$coin->name}}</small>
+                            </div>
+                        </div>
+                        <a href="{{route('coins.detailedCoin', ['id'=>$coin->id])}}">
+                            <img src="{{asset('/assets/coins/'.$coin->image)}}" alt=""
+                                 class="w-75 m-3 img-fluid rounded-circle">
+                        </a>
+                        {{$coin->userCoinInYears}}
+                    </div>
+                @endforeach
+            @endif
+        </div>
+        <div class="d-flex justify-content-center mt-1">
+            {{$coins->links()}}
         </div>
     </div>
 @endsection

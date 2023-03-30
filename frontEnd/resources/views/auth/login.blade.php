@@ -37,10 +37,8 @@
                                 </div>
                             </div>
                             <div class="justify-content-center offset-md-1 row">
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link text-decoration-none disabled"
-                                       href="{{ route('password.request') }}">@lang('auth.forgot')</a>
-                                @endif
+                                <a class="btn btn-link text-decoration-none disabled"
+                                   href="{{ route('password.request') }}">@lang('auth.forgot')</a>
                                 <div class="d-flex justify-content-center">
                                     <button class="btn btn-primary me-2" type="submit">@lang('auth.login')</button>
                                     <span class="my-auto">@lang('or')</span>

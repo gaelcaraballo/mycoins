@@ -56,7 +56,11 @@ class UserController extends Controller
         return view("users/detailedUser",
             ["detailedUser" => $detailedUser,
                 "coins" => Coin::join('collection', 'coins.id', '=', 'collection.coin_id')
-                    ->select('coins.*')->where('collection.user_id', $id)->get(),
+                    ->select('coins.*', DB::raw('GROUP_CONCAT(DISTINCT collection.year ORDER BY collection.year ASC SEPARATOR " - ") as userCoinInYears'))
+                    ->where('collection.user_id', $id)
+                    ->groupBy('coins.id')
+                    ->distinct()
+                    ->paginate(8),
                 "countCollection" => Collection::where('user_id', $id)->count()]);
     }
 
