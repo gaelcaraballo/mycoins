@@ -11,8 +11,8 @@
                               enctype="multipart/form-data">
                             @csrf
                             <div>
-                                <img alt="" id="imageSnippet" height="150px"
-                                     class="rounded-circle w-25 @error('avatar') is-invalid @enderror"
+                                <img alt="" id="imageSnippet" height="150px" width="150px"
+                                     class="rounded-circle @error('avatar') is-invalid @enderror"
                                      src="{{asset('assets/avatars/'.Auth::user()->avatar) }}">
                                 @error('avatar')
                                 <div class="invalid-feedback">{{$message}}</div>

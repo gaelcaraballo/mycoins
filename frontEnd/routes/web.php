@@ -51,6 +51,7 @@ Route::group(["middleware" => "auth"], function () {
     Route::group(["prefix" => "places"], function () {
         Route::get("/", [PlaceController::class, "all"])->name("places");
         Route::get("/searchPlace", [PlaceController::class, "searchPlace"])->name("places.searchPlace");
+        Route::get("/detailedPlace/{id}", [PlaceController::class, "detailedPlace"])->name("places.detailedPlace");
         Route::get("/addPlace", [PlaceController::class, "addPlace"])->name("places.addPlace");
         Route::post("/store", [PlaceController::class, "store"])->name("places.store");
         Route::post("/places/{id}/toggle", [PlaceController::class, "toggle"])->name("places.toggle");

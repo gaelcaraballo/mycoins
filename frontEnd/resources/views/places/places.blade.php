@@ -27,7 +27,8 @@
                     @foreach($places as $place)
                         <div class="bg-light border rounded m-2 p-1 @if(!$place->isAccepted) bg-danger-subtle @endif">
                             <div class="d-flex justify-content-between">
-                                <a href="" class="text-dark text-decoration-none">
+                                <a href="{{ route('places.detailedPlace', $place->id) }}"
+                                   class="text-dark text-decoration-none">
                                     <div class="d-flex align-items-center">
                                         <img alt="" class="flagIcon border img-fluid" style="width: 50px; height: 30px;"
                                              src="{{asset('/assets/flags/'.$place->country->country_image)}}">

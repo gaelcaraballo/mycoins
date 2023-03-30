@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Coin;
 use App\Models\Place;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class PlaceController extends Controller
@@ -14,20 +17,6 @@ class PlaceController extends Controller
             ["countries" => Coin::join('countries', 'coins.country_id', '=', 'countries.id')
                 ->select('countries.country_name', 'countries.id')->distinct()->pluck('country_name', 'id'),
                 "places" => Place::paginate(20)]);
-    }
-
-    public function searchPlace(Request $request)
-    {
-        $query = $request->input('searchPlace');
-        $places = Place::where('city_name', 'LIKE', "%$query%")->orWhere('postcode', 'LIKE', "%$query%")
-            ->orWhere('street_name', 'LIKE', "%$query%")->orWhereHas('country', function ($q) use ($query) {
-                $q->where('country_name', 'LIKE', "%$query%");
-            })
-            ->paginate(20);
-        if (count($places) === 0) {
-            $places = 0;
-        }
-        return view('places/places', compact('places', 'query'));
     }
 
     public function addPlace()
@@ -62,6 +51,33 @@ class PlaceController extends Controller
         return redirect()->route('places')->with(compact('countries', 'places'));
     }
 
+    public function delete($id)
+    {
+        Place::destroy($id);
+        return redirect("places");
+    }
+
+    public function detailedPlace($id): Factory|View|Application
+    {
+        return view("places/detailedPlace",
+            ["detailedPlace" => Place::find($id), ["countries" => Coin::join('countries', 'coins.country_id', '=', 'countries.id')
+                ->select('countries.country_name', 'countries.id')->distinct()->pluck('country_name', 'id')]]);
+    }
+
+    public function searchPlace(Request $request)
+    {
+        $query = $request->input('searchPlace');
+        $places = Place::where('city_name', 'LIKE', "%$query%")->orWhere('postcode', 'LIKE', "%$query%")
+            ->orWhere('street_name', 'LIKE', "%$query%")->orWhereHas('country', function ($q) use ($query) {
+                $q->where('country_name', 'LIKE', "%$query%");
+            })
+            ->paginate(20);
+        if (count($places) === 0) {
+            $places = 0;
+        }
+        return view('places/places', compact('places', 'query'));
+    }
+
     public function toggle($id)
     {
         $place = Place::findOrFail($id);
@@ -69,11 +85,5 @@ class PlaceController extends Controller
         $place->save();
 
         return redirect()->back();
-    }
-
-    public function delete($id)
-    {
-        Place::destroy($id);
-        return redirect("places");
     }
 }
