@@ -23,7 +23,6 @@
                     <img src="{{asset('assets/otherImages/ruinsNoCoinFound.png')}}" alt="">
                 </div>
             @else
-                <div id="search-results"></div>
                 <div class="border rounded mt-1">
                     @foreach($places as $place)
                         <div class="bg-light border rounded m-2 p-1">
