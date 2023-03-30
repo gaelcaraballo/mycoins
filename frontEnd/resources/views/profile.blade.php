@@ -11,7 +11,8 @@
                               enctype="multipart/form-data">
                             @csrf
                             <div>
-                                <img alt="" id="imageSnippet" class="@error('avatar') is-invalid @enderror"
+                                <img alt="" id="imageSnippet" height="150px"
+                                     class="rounded-circle w-25 @error('avatar') is-invalid @enderror"
                                      src="{{asset('assets/avatars/'.Auth::user()->avatar) }}">
                                 @error('avatar')
                                 <div class="invalid-feedback">{{$message}}</div>
@@ -84,13 +85,5 @@
             </div>
         </div>
     </div>
-    <script>
-        avatar.onchange = () => {
-            const [file] = avatar.files
-            if (file) {
-                imageSnippet.src = URL.createObjectURL(file)
-                return imageSnippet.src
-            }
-        }
-    </script>
+    <script src="{{ asset('js/profile.js') }}"></script>
 @endsection

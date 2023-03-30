@@ -60,7 +60,7 @@ class UserController extends Controller
                     ->where('collection.user_id', $id)
                     ->groupBy('coins.id')
                     ->distinct()
-                    ->paginate(8),
+                    ->paginate(4),
                 "countCollection" => Collection::where('user_id', $id)->count()]);
     }
 

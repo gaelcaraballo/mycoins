@@ -23,7 +23,8 @@
                             @lang('auth.country'):
                             <b>{{$detailedCoin->country->country_name}}</b>
                             <img width="30px" class="me-auto"
-                                 src="{{asset('assets/flags/'.$detailedCoin->country->country_image)}}" alt="">
+                                 src="{{asset('assets/flags/'.$detailedCoin->country->country_image)}}"
+                                 alt="{{$detailedCoin->country->country_name}}">
                         </div>
                         <div>
                             @lang('views.coinType'):

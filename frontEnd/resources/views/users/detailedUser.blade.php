@@ -13,6 +13,7 @@
                     <div>
                         @lang('views.localization'):
                         <span class="fw-bold">{{$detailedUser->country->country_name}}</span>
+                        <img width="7%" src="{{asset('assets/flags/'.$detailedUser->country->country_image)}}" alt="">
                     </div>
                     <div>
                         @lang('views.collection'):
@@ -34,7 +35,7 @@
                 </div>
             @else
                 @foreach($coins as $coin)
-                    <div class="border col-4 col-sm-3 col-xl-6 p-1 row" title="{{$coin->description}}">
+                    <div class="border col-4 col-sm-3 col-xl-6 p-1" title="{{$coin->description}}">
                         <div class="d-flex m-1 justify-content-center">
                             <div class="w-25">
                                 <img class="w-75 me-auto border border-secondary"

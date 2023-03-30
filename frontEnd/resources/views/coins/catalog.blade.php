@@ -24,7 +24,8 @@
                              id="coinBg-{{$coin->id}}">
                             <div class="d-flex mt-2">
                                 <img class="w-25 h-100 me-auto border border-secondary"
-                                     src="{{asset('assets/flags/'.$coin->country->country_image)}}" alt="">
+                                     src="{{asset('assets/flags/'.$coin->country->country_image)}}"
+                                     alt="{{$coin->country_name}}">
                                 @auth()
                                     <a href="{{route('addToMyCollection', ['id' =>$coin->id, 'year' => $coin->year[0]])}}"
                                        @if(sizeof($coin->year) >1) data-bs-target="#flush-collapseOne{{$coin->id}}"
@@ -43,7 +44,7 @@
                             <small class="coinName">{{$coin->name}}</small>
                             <div class="d-flex justify-content-center row">
                                 <a href="{{route('coins.detailedCoin', ['id'=>$coin->id])}}">
-                                    <img src="{{asset('/assets/coins/'.$coin->image)}}" alt=""
+                                    <img src="{{asset('/assets/coins/'.$coin->image)}}" alt="{{$coin->name}}"
                                          class="w-75 m-2 img-fluid rounded-circle align-items-end">
                                 </a>
                                 @if(sizeof($coin->year) <2)

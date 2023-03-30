@@ -20,7 +20,7 @@
             @if(empty($places))
                 <div id="search-results" class="rounded mt-1 text-danger row">
                     <b>@lang('views.noPlaceFound')</b>
-                    <img src="{{asset('assets/otherImages/ruinsNoCoinFound.png')}}" alt="" width="50%">
+                    <img src="{{asset('assets/otherImages/ruinsNoCoinFound.png')}}" alt="">
                 </div>
             @else
                 <div class="border rounded mt-1">
@@ -87,4 +87,5 @@
             @endif
         </div>
     </div>
+    <script src="{{ asset('js/places/places.js') }}"></script>
 @endsection
