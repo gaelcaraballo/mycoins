@@ -18,12 +18,20 @@ class PlaceController extends Controller
 
     public function searchPlace(Request $request)
     {
-        $query = $request->input('searchPlace');
+        $query = $request->input('q');
+
+        // Perform the search
+        $places = Place::where('city_name', 'like', '%' . $query . '%')->paginate(20);
+
+        // Return the search results as HTML
+        return response()->json(['places' => $places]);
+
+        /*$query = $request->input('searchPlace');
         $places = Place::where('city_name', 'LIKE', "%$query%")->paginate(20);
         if (count($places) === 0) {
             $places = 0;
         }
-        return view('places/places', compact('places', 'query'));
+        return view('places/places', compact('places', 'query'));*/
     }
 
     public function addPlace()
