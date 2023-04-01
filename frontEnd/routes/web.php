@@ -54,6 +54,7 @@ Route::group(["middleware" => "auth"], function () {
         Route::get("/detailedPlace/{id}", [PlaceController::class, "detailedPlace"])->name("places.detailedPlace");
         Route::get("/addPlace", [PlaceController::class, "addPlace"])->name("places.addPlace");
         Route::post("/store", [PlaceController::class, "store"])->name("places.store");
+        Route::post("/update/{id}", [PlaceController::class, "update"])->name("places.update");
         Route::post("/places/{id}/toggle", [PlaceController::class, "toggle"])->name("places.toggle");
         Route::get("/delete/{id}", [PlaceController::class, "delete"])->name("places.delete");
     });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Coin;
+use App\Models\Country;
 use App\Models\Place;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -51,6 +52,32 @@ class PlaceController extends Controller
         return redirect()->route('places')->with(compact('countries', 'places'));
     }
 
+    public function update(Request $request)
+    {
+        $place = Place::find($request->id);
+        $request->validate([
+            'city_name' => 'required|string|min:2|max:50',
+            'postcode' => 'required',
+            'street_name' => 'required|string|min:10|max:50',
+        ]);
+        $place->city_name = $request->city_name;
+        $place->postcode = $request->postcode;
+        $place->street_name = $request->street_name;
+        $place->country_id = $request->selectCountry;
+        $place->latitude = $request->latitude;
+        $place->longitude = $request->longitude;
+        $place->save();
+
+        $countries = Coin::join('countries', 'coins.country_id', '=', 'countries.id')
+            ->select('countries.country_name', 'countries.id')
+            ->distinct()
+            ->pluck('country_name', 'id');
+
+        $places = Place::all();
+
+        return redirect()->route('detailedPlace')->with(compact('countries', 'places'));
+    }
+
     public function delete($id)
     {
         Place::destroy($id);
@@ -59,9 +86,9 @@ class PlaceController extends Controller
 
     public function detailedPlace($id): Factory|View|Application
     {
-        return view("places/detailedPlace",
-            ["detailedPlace" => Place::find($id), ["countries" => Coin::join('countries', 'coins.country_id', '=', 'countries.id')
-                ->select('countries.country_name', 'countries.id')->distinct()->pluck('country_name', 'id')]]);
+        $countries = Country::select("id", "country_name")->get();
+        $detailedPlace = Place::find($id);
+        return view("places/detailedPlace", compact('detailedPlace', 'countries'));
     }
 
     public function searchPlace(Request $request)

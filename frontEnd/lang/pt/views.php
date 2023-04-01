@@ -21,6 +21,7 @@ return [
     'comingSoon' => 'Em Breve',
     'noCoins' => 'Desculpe, não há moedas para esta pesquisa',
     'addPlace' => 'Adicionar Lugar',
+    'savePlace' => 'Salvar Lugar',
     'streetName' => 'Nome da rua',
     'postcode' => 'Código postal',
     'cityName' => 'Cidade',

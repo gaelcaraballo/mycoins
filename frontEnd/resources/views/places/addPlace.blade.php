@@ -63,5 +63,5 @@
             </form>
         </div>
     </div>
-    <script src="{{ asset('js/places/addPlace.js') }}"></script>
+    <script src="{{ asset('js/places/mapPlaces.js') }}"></script>
 @endsection

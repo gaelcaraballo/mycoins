@@ -21,6 +21,7 @@ return [
     'comingSoon' => 'Bientôt disponible',
     'noCoins' => 'Désolé, il n\'y a pas de monnaies pour cette recherche',
     'addPlace' => 'Ajouter Lieu',
+    'savePlace' => 'Sauvegarder Lieu',
     'streetName' => 'Nom de rue',
     'postcode' => 'Code Postal',
     'cityName' => 'Ville',

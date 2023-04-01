@@ -21,6 +21,7 @@ return [
     'comingSoon' => 'Próximamente',
     'noCoins' => 'Lo sentimos, no hay resultados para esta búsqueda',
     'addPlace' => 'Añadir Lugar',
+    'savePlace' => 'Guardar Lugar',
     'streetName' => 'Nombre de la calle',
     'postcode' => 'Código postal',
     'cityName' => 'Ciudad',

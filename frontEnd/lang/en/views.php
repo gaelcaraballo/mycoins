@@ -21,6 +21,7 @@ return [
     'comingSoon' => 'Coming Soon',
     'noCoins' => 'Sorry there are no coins for this search',
     'addPlace' => 'Add Place',
+    'savePlace' => 'Save Place',
     'streetName' => 'Street Name',
     'postcode' => 'Postcode',
     'cityName' => 'City',
