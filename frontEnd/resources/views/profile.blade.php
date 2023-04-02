@@ -4,10 +4,13 @@
     <div class="container mt-4 mb-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                @if(session()->has('success'))
+                    <div class="alert alert-success">@lang('profile.updateSuccess')</div>
+                @endif
                 <div class="card">
                     <h5 class="card-header fw-bold cardTitleProfile">@lang('profile.profileTitle')</h5>
                     <div class="card-body">
-                        <form action="{{ route('profile.update', Auth::user()->id) }}" method="POST"
+                        <form action="{{ route('profile.update', Auth::id()) }}" method="POST"
                               enctype="multipart/form-data">
                             @csrf
                             <div>
@@ -43,7 +46,7 @@
                                         <div class="invalid-feedback">{{$message}}</div>
                                         @enderror
                                         <label for="country" class="mt-3 fw-bold">@lang('auth.country')</label>
-                                        <select name="profileCountry" id="profileCountry" class="form-select">
+                                        <select name="country_id" id="country_id" class="form-select">
                                             <option hidden
                                                     value="{{Auth::user()->country->id}}">{{Auth::user()->country->country_name}}</option>
                                             @foreach($countries as $country)
@@ -74,7 +77,7 @@
                                     <button class="border border-white bg-primary text-white fw-bold p-2"
                                             type="submit">@lang('profile.saveChanges')</button>
                                     <a class="border border-white bg-danger text-white fw-bold p-2 text-decoration-none"
-                                       id="deleteButton" href="{{ route('profile.delete', Auth::user()->id) }}"
+                                       id="deleteButton" href="{{ route('profile.delete', Auth::id()) }}"
                                        onclick="return confirm('Are you sure you want to delete your account? This is an irreversible action!')">
                                         @lang('profile.deleteAccount')</a>
                                 </div>

@@ -25,5 +25,4 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Collection::class);
     }
-
 }

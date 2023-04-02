@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Now you can see the detailed places correctly, the lat and lng are correct!" />
+    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Now you can see the detailed places correctly, the lat and lng are correct!">
+      <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680467524.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680467534.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680467892.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680468034.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680468039.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680468044.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680468052.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Models/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Models/Place.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/users/detailedUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/users/detailedUser.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +31,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/frontEnd/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -207,7 +228,7 @@
       <workItem from="1680164103958" duration="15549000" />
       <workItem from="1680183861334" duration="15812000" />
       <workItem from="1680382179451" duration="5041000" />
-      <workItem from="1680432309674" duration="4268000" />
+      <workItem from="1680432309674" duration="21684000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -335,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680436394012</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="-Now you can see the detailed places correctly, the lat and lng are correct!">
+      <created>1680436856401</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680436856401</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

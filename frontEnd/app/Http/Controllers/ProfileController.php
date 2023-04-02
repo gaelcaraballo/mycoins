@@ -14,8 +14,7 @@ class ProfileController extends Controller
 {
     public function profile()
     {
-        return view("/profile",
-            ["countries" => Country::select("id", "country_name")->get()]);
+        return view("/profile", ["countries" => Country::select("id", "country_name")->get()]);
     }
 
     public function update($id, Request $request)
@@ -24,51 +23,47 @@ class ProfileController extends Controller
         $request->validate([
             'nickname' => [
                 'required', 'string', 'min:4', 'max:20',
-                Rule::unique('users')->ignore(Auth::user()->id),
+                Rule::unique('users')->ignore(auth()->id()),
             ],
             'avatar' => 'mimes:png,jpg,jpeg|max:2048',
-            'email' => 'required|string|email|max:255|unique:users,email,' . Auth::user()->id,
+            'email' => [
+                'required', 'string', 'email', 'max:255',
+                Rule::unique('users')->ignore(auth()->id()),
+            ],
             'name' => 'regex:/^[a-zA-Z]+$/u|max:50',
             'surname' => 'regex:/^[a-zA-Z]+$/u|max:50',
         ]);
+        $user->update($request->only(['nickname', 'name', 'surname', 'email', 'country_id', 'longitude']));
 
         if ($request->hasFile('avatar')) {
-            $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            $avatar->move(public_path('assets/avatars'), $filename);
+            $filename = time() . '.' . $request->file('avatar')->getClientOriginalExtension();
+            $request->file('avatar')->move(public_path('assets/avatars'), $filename);
             $user->avatar = $filename;
         }
-        $user->update([
-            'nickname' => $request->nickname,
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'email' => $request->email,
-            'country_id' => $request->profileCountry,
-        ]);
-        if ($user->id !== auth()->id()) {
-            abort(403);
-        }
-        return redirect("profile");
+        $user->save();
+        abort_if($user->id !== auth()->id(), 403);
+
+        return redirect('profile')->with('success', '');
     }
 
     public function deleteAvatar()
     {
         $user = auth()->user();
         $defaultAvatar = 'icon.png';
+
         if ($user->avatar !== $defaultAvatar) {
+            $user->update(['avatar' => $defaultAvatar]);
             Storage::delete($user->avatar);
-            $user->avatar = $defaultAvatar;
-            $user->save();
         }
         return redirect('profile');
     }
 
+
     public function delete($id)
     {
-        $user = User::findOrFail($id);
+        User::destroy($id);
         Auth::logout();
-        Session::flush();
-        $user->delete();
+        Session::invalidate();
         return redirect('login');
     }
 }

@@ -39,7 +39,6 @@
                             </div>
                             <div class="col">
                                 <label for="country_id" class="mt-3 fw-bold">@lang('auth.country')</label>
-
                             </div>
                             <div class="col">
                                 <input class="form-control @error('street_name') is-invalid @enderror" type="text"
@@ -50,7 +49,7 @@
                             </div>
                             <div class="col">
                                 <div class="mb-1">
-                                    {!! Form::select('selectCountry', $countries, null,['class' => 'form-select', 'placeholder' => __('views.selectCountry')]) !!}
+                                    {!! Form::select('country_id', $countries, null,['class' => 'form-select', 'placeholder' => __('views.selectCountry')]) !!}
                                 </div>
                             </div>
                         </div>

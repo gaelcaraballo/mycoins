@@ -33,14 +33,7 @@ class PlaceController extends Controller
             'postcode' => 'required',
             'street_name' => 'required|string|min:10|max:50',
         ]);
-        $place = new Place;
-        $place->city_name = $request->city_name;
-        $place->postcode = $request->postcode;
-        $place->street_name = $request->street_name;
-        $place->country_id = $request->selectCountry;
-        $place->latitude = $request->latitude;
-        $place->longitude = $request->longitude;
-        $place->save();
+        Place::create($request->only(['city_name', 'postcode', 'street_name', 'country_id', 'latitude', 'longitude']));
 
         $countries = Coin::join('countries', 'coins.country_id', '=', 'countries.id')
             ->select('countries.country_name', 'countries.id')
@@ -51,6 +44,16 @@ class PlaceController extends Controller
 
         return redirect()->route('places')->with(compact('countries', 'places'));
     }
+
+    private function executeJavaScriptFunction($functionName, $arguments)
+    {
+        $command = sprintf('node public/assets/js/mapPlace.js %s %s', $functionName, escapeshellarg(json_encode($arguments)));
+        $output = shell_exec($command);
+        dd($command);
+
+        return trim($output);
+    }
+
 
     public function update(Request $request)
     {

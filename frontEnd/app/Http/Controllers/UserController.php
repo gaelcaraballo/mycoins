@@ -28,9 +28,7 @@ class UserController extends Controller
 
     public function selectCountry(Request $request)
     {
-        $validated = $request->validate([
-            'selectCountry' => 'nullable|exists:countries,id'
-        ]);
+        $validated = $request->validate(['selectCountry' => 'nullable|exists:countries,id']);
         $users = User::select("id", "nickname", "avatar", "country_id", "created_at",
             DB::raw("(SELECT COUNT(*) FROM collection WHERE collection.user_id = users.id) as coin_count"))
             ->where("id", "!=", auth()->id())
@@ -47,21 +45,20 @@ class UserController extends Controller
     public function detailedUser($id): View|Factory|RedirectResponse|Application
     {
         $detailedUser = User::find($id);
-        if (auth()->id() == $id) {
-            return redirect()->action([ProfileController::class, "profile"]);
-        }
         if (!$detailedUser) {
             return redirect()->action([UserController::class, "all"]);
         }
-        return view("users/detailedUser",
-            ["detailedUser" => $detailedUser,
-                "coins" => Coin::join('collection', 'coins.id', '=', 'collection.coin_id')
-                    ->select('coins.*', DB::raw('GROUP_CONCAT(DISTINCT collection.year ORDER BY collection.year ASC SEPARATOR " - ") as userCoinInYears'))
-                    ->where('collection.user_id', $id)
-                    ->groupBy('coins.id')
-                    ->distinct()
-                    ->paginate(4),
-                "countCollection" => Collection::where('user_id', $id)->count()]);
+        if (auth()->id() == $id) {
+            return redirect()->action([ProfileController::class, "profile"]);
+        }
+        $coins = Coin::join('collection', 'coins.id', '=', 'collection.coin_id')
+            ->select('coins.*', DB::raw('GROUP_CONCAT(DISTINCT collection.year ORDER BY collection.year ASC SEPARATOR " - ") as userCoinInYears'))
+            ->where('collection.user_id', $id)
+            ->groupBy('coins.id')
+            ->distinct()
+            ->paginate(4);
+        $countCollection = Collection::where('user_id', $id)->count();
+        return view("users/detailedUser", compact('detailedUser', 'coins', 'countCollection'));
     }
 
     public function delete(User $user)

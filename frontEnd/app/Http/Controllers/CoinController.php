@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Coin;
 use App\Models\Collection;
 use App\Models\Year;
+use http\QueryString;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -37,8 +38,7 @@ class CoinController extends Controller
     public function selectCoin(Request $request)
     {
         $cs = $request->countrySelect;
-        $ts = $request->typeSelect;
-        $ts = $ts == 0 ? 'circulation' : 'commemorative';
+        $ts = $request->typeSelect == 0 ? 'circulation' : 'commemorative';
         $ys = $request->yearSelect;
         $query = Coin::query();
         $query->join('countries', 'countries.id', '=', 'coins.country_id');

@@ -11,7 +11,16 @@ class Place extends Model
     use HasFactory;
 
     protected $table = "places";
+    protected $fillable = [
+        'city_name',
+        'postcode',
+        'street_name',
+        'country_id',
+        'latitude',
+        'longitude',
+    ];
     public $timestamps = true;
+
 
     public function country(): BelongsTo
     {

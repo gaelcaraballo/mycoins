@@ -35,7 +35,7 @@
                 </div>
             @else
                 @foreach($coins as $coin)
-                    <div class="border col-4 col-sm-3 col-xl-6 p-1" title="{{$coin->description}}">
+                    <div class="border col-3 col-sm-3 p-1" title="{{$coin->description}}">
                         <div class="d-flex m-1 justify-content-center">
                             <div class="w-25">
                                 <img class="w-75 me-auto border border-secondary"
