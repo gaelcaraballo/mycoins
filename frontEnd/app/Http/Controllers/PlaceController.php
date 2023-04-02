@@ -75,7 +75,7 @@ class PlaceController extends Controller
 
         $places = Place::all();
 
-        return redirect()->route('detailedPlace')->with(compact('countries', 'places'));
+        return redirect()->back()->with(compact('countries', 'places'));
     }
 
     public function delete($id)

@@ -5,7 +5,9 @@
             <form action="{{ route('places.update', ['id' => $detailedPlace->id]) }}" method="POST">
                 <div class="d-flex justify-content-between mt-1 border-bottom">
                     <h2>@lang('views.places')</h2>
-                    <button type="submit" class="btn btn-primary mb-1">@lang('views.savePlace')</button>
+                    @if(auth()->user()->isAdmin)
+                        <button type="submit" class="btn btn-primary mb-1">@lang('views.savePlace')</button>
+                    @endif
                 </div>
                 <div class="mt-1">
                     @csrf
@@ -19,13 +21,15 @@
                             </div>
                             <div class="col">
                                 <input class="form-control @error('city_name') is-invalid @enderror" type="text"
-                                       name="city_name" id="city_name" value="{{$detailedPlace->city_name}}">
+                                       name="city_name" id="city_name" value="{{$detailedPlace->city_name}}"
+                                       @if(!auth()->user()->isAdmin)readonly @endif>
                                 @error('city_name')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror</div>
                             <div class="col">
                                 <input class="form-control @error('postcode') is-invalid @enderror" type="number"
-                                       name="postcode" id="postcode" value="{{$detailedPlace->postcode}}">
+                                       name="postcode" id="postcode" value="{{$detailedPlace->postcode}}"
+                                       @if(!auth()->user()->isAdmin)readonly @endif>
                                 @error('postcode')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -40,22 +44,30 @@
                             </div>
                             <div class="col">
                                 <input class="form-control @error('street_name') is-invalid @enderror" type="text"
-                                       name="street_name" id="street_name" value="{{$detailedPlace->street_name}}">
+                                       name="street_name" id="street_name" value="{{$detailedPlace->street_name}}"
+                                       @if(!auth()->user()->isAdmin)readonly @endif>
                                 @error('street_name')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col">
                                 <div class="mb-1">
-                                    {{ Form::select('profileCountry', $countries->pluck('country_name', 'id'), $detailedPlace->country->id, ['class' => 'form-select', 'id' => 'profileCountry']) }}
+                                    @if (Auth::user()->isAdmin)
+                                        {{ Form::select('selectCountry', $countries->pluck('country_name', 'id'), $detailedPlace->country->id, ['class' => 'form-select', 'id' => 'profileCountry']) }}
+                                    @else
+                                        <input class="form-control @error('street_name') is-invalid @enderror"
+                                               type="text" name="street_name" id="street_name"
+                                               value="{{ $detailedPlace->country->country_name}}"
+                                               @if(!auth()->user()->isAdmin)readonly @endif>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="map" class="d-flex justify-content-center border border-2 border-dark-subtle"
                          style="height: 300px;"></div>
-                    <input type="hidden" name="latitude" id="latitude">
-                    <input type="hidden" name="longitude" id="longitude">
+                    <input type="hidden" name="latitude" id="latitude" value="{{$detailedPlace->latitude}}">
+                    <input type="hidden" name="longitude" id="longitude" value="{{$detailedPlace->longitude}}">
                 </div>
             </form>
         </div>

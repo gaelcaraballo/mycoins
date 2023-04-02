@@ -64,4 +64,5 @@
         </div>
     </div>
     <script src="{{ asset('js/places/mapPlaces.js') }}"></script>
+    <script>initMap(false);</script>
 @endsection
