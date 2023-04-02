@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Now you can see the detailed places correctly, the lat and lng are correct!">
+    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Fixed bunch of errors">
       <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680467524.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680467534.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontEnd/public/assets/avatars/1680467892.png" afterDir="false" />
@@ -228,7 +228,7 @@
       <workItem from="1680164103958" duration="15549000" />
       <workItem from="1680183861334" duration="15812000" />
       <workItem from="1680382179451" duration="5041000" />
-      <workItem from="1680432309674" duration="21684000" />
+      <workItem from="1680432309674" duration="22294000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -382,6 +382,7 @@
     <MESSAGE value="-Now in places, you can search by country" />
     <MESSAGE value="-Now you can see the detailed places" />
     <MESSAGE value="-Now you can see the detailed places correctly, the lat and lng are correct!" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Now you can see the detailed places correctly, the lat and lng are correct!" />
+    <MESSAGE value="-Fixed bunch of errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Fixed bunch of errors" />
   </component>
 </project>
