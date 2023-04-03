@@ -4,9 +4,9 @@
     <div class="container-fluid mb-4 mt-4">
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
             <div class="d-flex justify-content-between mb-1">
-                <h2>@lang('views.places')</h2>
+                <h2>@lang('places.places')</h2>
                 <a type="text" href="{{route('places.addPlace')}}"
-                   class="ms-auto btn btn-success">@lang('views.addPlace')</a>
+                   class="ms-auto btn btn-success">@lang('places.addPlace')</a>
             </div>
             <div class="d-flex">
                 {!!Form::open(['route' => 'places.searchPlace', 'method' => 'get', 'class'=> 'd-flex'])!!}
@@ -19,7 +19,7 @@
             </div>
             @if(empty($places))
                 <div id="search-results" class="rounded mt-1 text-danger row">
-                    <b>@lang('views.noPlaceFound')</b>
+                    <b>@lang('places.noPlaceFound')</b>
                     <img src="{{asset('assets/otherImages/ruinsNoCoinFound.png')}}" alt="">
                 </div>
             @else

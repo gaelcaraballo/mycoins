@@ -27,7 +27,7 @@
                                  alt="{{$detailedCoin->country->country_name}}">
                         </div>
                         <div>
-                            @lang('views.coinType'):
+                            @lang('views.type'):
                             <b>{{ucfirst($detailedCoin->type)}}</b>
                         </div>
                         <div>

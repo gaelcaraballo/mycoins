@@ -4,9 +4,9 @@
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
             <form action="{{ route('places.update', ['id' => $detailedPlace->id]) }}" method="POST">
                 <div class="d-flex justify-content-between mt-1 border-bottom">
-                    <h2>@lang('views.places')</h2>
+                    <h2>@lang('places.places')</h2>
                     @if(auth()->user()->isAdmin)
-                        <button type="submit" class="btn btn-primary mb-1">@lang('views.savePlace')</button>
+                        <button type="submit" class="btn btn-primary mb-1">@lang('places.savePlace')</button>
                     @endif
                 </div>
                 <div class="mt-1">
@@ -66,6 +66,9 @@
                     </div>
                     <div id="map" class="d-flex justify-content-center border border-2 border-dark-subtle"
                          style="height: 300px;"></div>
+                    @if(session('success'))
+                        <div class="alert alert-success">@lang('places.placeWarning')</div>
+                    @endif
                     <input type="hidden" name="latitude" id="latitude" value="{{$detailedPlace->latitude}}">
                     <input type="hidden" name="longitude" id="longitude" value="{{$detailedPlace->longitude}}">
                 </div>

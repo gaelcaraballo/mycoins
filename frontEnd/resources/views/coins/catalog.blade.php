@@ -17,7 +17,7 @@
             <div
                 class="d-flex row justify-content-center text-center coinsDiv bg-dark text-white col-12 col-sm-8 border rounded">
                 @if(count($coins) <= 0)
-                    <h1 class="mt-2">@lang('views.noCoins')</h1>
+                    <h1 class="mt-2">@lang('coins.noCoins')</h1>
                 @else
                     @foreach($coins as $coin)
                         <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 border rounded m-3"
@@ -41,17 +41,18 @@
                                     </a>
                                 @endauth
                             </div>
-                            <small class="coinName">{{$coin->name}}</small>
                             <div class="d-flex justify-content-center row">
-                                <a href="{{route('coins.detailedCoin', ['id'=>$coin->id])}}">
+                                <a href="{{route('coins.detailedCoin', ['id'=>$coin->id])}}"
+                                   class="text-decoration-none text-white">
+                                    <small class="coinName">{{$coin->name}}</small>
                                     <img src="{{asset('/assets/coins/'.$coin->image)}}" alt="{{$coin->name}}"
                                          class="w-75 m-2 img-fluid rounded-circle align-items-end">
+                                    @if(sizeof($coin->year) <2)
+                                        <div>
+                                            <small>{{$coin->year[0]}}</small>
+                                        </div>
+                                    @endif
                                 </a>
-                                @if(sizeof($coin->year) <2)
-                                    <div>
-                                        <small>{{$coin->year[0]}}</small>
-                                    </div>
-                                @endif
                             </div>
                             @auth
                                 <div id="flush-collapseOne{{$coin->id}}" class="accordion-collapse collapse">

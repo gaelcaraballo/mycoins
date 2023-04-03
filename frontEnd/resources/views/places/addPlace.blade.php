@@ -5,8 +5,8 @@
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
             <form action="{{route('places.store')}}" method="POST">
                 <div class="d-flex justify-content-between mt-1 border-bottom">
-                    <h2>@lang('views.places')</h2>
-                    <button type="submit" class="btn btn-success mb-1">@lang('views.addPlace')</button>
+                    <h2>@lang('places.places')</h2>
+                    <button type="submit" class="btn btn-success mb-1">@lang('places.addPlace')</button>
                 </div>
                 <div class="mt-1">
                     @csrf
@@ -49,7 +49,8 @@
                             </div>
                             <div class="col">
                                 <div class="mb-1">
-                                    {!! Form::select('country_id', $countries, null,['class' => 'form-select', 'placeholder' => __('views.selectCountry')]) !!}
+                                    <span id="country_id" class="form-control"></span>
+                                    <input type="hidden" name="country_id" id="country_id_input">
                                 </div>
                             </div>
                         </div>
@@ -63,5 +64,5 @@
         </div>
     </div>
     <script src="{{ asset('js/places/mapPlaces.js') }}"></script>
-    <script>initMap(false);</script>
+    <script>initMap(false)</script>
 @endsection

@@ -27,13 +27,10 @@
             </div>
         </div>
         <h4 class="mt-1">@lang('views.collection')</h4>
-        <div class="border d-flex bg-dark text-white">
-            @if(empty($coins))
-                <div id="search-results" class="rounded mt-1 text-danger row">
-                    <b>@lang('views.noPlaceFound')</b>
-                    <img src="{{asset('assets/otherImages/ruinsNoCoinFound.png')}}" alt="" width="50%">
-                </div>
-            @else
+        @if(count($coins) <= 0)
+            <div class="alert alert-success" aria-label="Close">@lang('coins.noCoins')</div>
+        @else
+            <div class="border d-flex bg-dark text-white">
                 @foreach($coins as $coin)
                     <div class="border col-3 col-sm-3 p-1" title="{{$coin->description}}">
                         <div class="d-flex m-1 justify-content-center">
@@ -52,8 +49,8 @@
                         <span class="d-flex justify-content-center">{{$coin->userCoinInYears}}</span>
                     </div>
                 @endforeach
-            @endif
-        </div>
+            </div>
+        @endif
         <div class="d-flex justify-content-center mt-1">
             {{$coins->links()}}
         </div>

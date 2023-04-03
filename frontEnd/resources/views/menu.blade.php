@@ -37,7 +37,7 @@
                 <a href="{{route('places')}}"
                    class="swapBg m-3 col-md-3 col-sm-6 col-8 border border-3 border-dark rounded text-decoration-none text-dark">
                     <h5 class="mt-2 fw-bold">
-                        @lang('views.places')
+                        @lang('places.places')
                     </h5>
                 </a>
             @endauth

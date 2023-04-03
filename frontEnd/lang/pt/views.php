@@ -5,7 +5,6 @@ return [
     'circulation' => 'Em Circulação',
     'users' => 'Usuários',
     'statistics' => 'Estatísticas',
-    'places' => 'Lugares',
     'filter' => 'Filtrar por',
     'coinType' => 'Tipo',
     'year' => 'Ano',
@@ -19,9 +18,6 @@ return [
     'selectCountry' => 'Selecionar País',
     'shop' => 'Loja',
     'comingSoon' => 'Em Breve',
-    'noCoins' => 'Desculpe, não há moedas para esta pesquisa',
-    'addPlace' => 'Adicionar Lugar',
-    'savePlace' => 'Salvar Lugar',
     'streetName' => 'Nome da rua',
     'postcode' => 'Código postal',
     'cityName' => 'Cidade',
@@ -30,5 +26,4 @@ return [
     'coins' => 'Moedas',
     'description' => 'Descripção',
     'createdAt' => 'Criado em',
-    'noPlaceFound' => 'Desculpe, não conseguimos encontrar nenhum lugar'
 ];

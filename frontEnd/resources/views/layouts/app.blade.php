@@ -41,11 +41,11 @@
                     </li>
                     <li>
                         <a href="{{route('places')}}" class="nav-link text-dark fw-bold">
-                            <i class="fs-5 bi-shop-window"></i><span class="ms-1">@lang('views.places')</span></a>
+                            <i class="fs-5 bi-shop-window"></i><span class="ms-1">@lang('places.places')</span></a>
                     </li>
                     <li>
                         <a href="{{ route('catalog', ['id' => '0']) }}" class="nav-link text-dark fw-bold">
-                            <i class="fs-5 bi-coin"></i><span class="ms-1">@lang('views.coins')</span></a>
+                            <i class="fs-5 bi-coin"></i><span class="ms-1">@lang('coins.coins')</span></a>
                     </li>
                     <li>
                         <a href="{{route('users')}}" class="nav-link text-dark fw-bold">
@@ -83,11 +83,11 @@
                 @guest
                     <a href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right text-dark"></i></a>
                     @unless(request()->route()->getName() == 'login')
-                        <a class="logInIcon my-auto nav-link"
+                        <a class="logInIcon my-auto nav-link pe-1"
                            href="{{ route('login') }}">@lang('titles.login')</a>
                     @endunless
                     @unless(request()->route()->getName() == 'register')
-                        <a class="registerIcon my-auto nav-link"
+                        <a class="registerIcon my-auto nav-link border-start border-2 border-secondary ps-2"
                            href="{{ route('register') }}">@lang('titles.register')</a>
                     @endunless
                 @else
