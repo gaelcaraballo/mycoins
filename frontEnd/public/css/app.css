@@ -18,7 +18,7 @@
 
     .bi-box-arrow-in-right {
         font-size: 20px;
-        visibility: visible !important;
+        display: revert !important;
     }
 
     .logInIcon, .registerIcon {
@@ -35,5 +35,5 @@
 }
 
 .bi-box-arrow-in-right {
-    visibility: hidden;
+    display: none;
 }
