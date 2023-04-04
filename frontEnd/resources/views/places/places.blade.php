@@ -41,7 +41,7 @@
                                     </div>
                                 </a>
                                 <div class="placeButtons ms-auto me-1 d-flex">
-                                    @if(auth()->user()->isAdmin)
+                                    @if(Auth::user()->isAdmin)
                                         <form method="POST" action="{{ route('places.toggle', $place->id) }}"
                                               class="d-flex">
                                             @csrf

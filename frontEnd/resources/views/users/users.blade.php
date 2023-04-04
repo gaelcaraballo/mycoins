@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="me-2 ms-auto">
-                                    @if(auth()->user()->isAdmin)
+                                    @if(Auth::user()->isAdmin)
                                         <a class="btn btn-danger" id="deleteButton"
                                            onclick="return confirm('Are you sure you want to delete this user? This is an irreversible action!')"
                                            href="{{ route('users.delete', $user->id) }}">

@@ -23,6 +23,7 @@ return [
     'cityName' => 'Cidade',
     'allCountries' => 'Todos os países',
     'allYears' => 'Todos os anos',
+    'allTypes' => 'Todos os tipos',
     'coins' => 'Moedas',
     'description' => 'Descripção',
     'createdAt' => 'Criado em',

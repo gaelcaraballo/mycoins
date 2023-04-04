@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Coin;
 use App\Models\Collection;
 use App\Models\Year;
-use http\QueryString;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -13,9 +12,9 @@ use Illuminate\Http\Request;
 
 class CoinController extends Controller
 {
-    public function catalog($id): Factory|View|Application
+    public function catalog($id = null): Factory|View|Application
     {
-        if ($id == 0) {
+        if ($id == null) {
             $coins = Coin::paginate(15);
         } else {
             $coins = Coin::where('type', $id)->paginate(15);

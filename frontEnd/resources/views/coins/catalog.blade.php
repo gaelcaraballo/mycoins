@@ -6,10 +6,10 @@
         <div class="d-flex">
             <div class="searchDiv col-2 ms-5 me-5 border rounded">
                 <h5 class="mt-2 d-flex justify-content-center fw-bold">@lang('views.filter')</h5>
-                {!! Form::open(['route' => 'coins.selectCoin']) !!}
                 <div class="align-content-between m-1">
+                    {!! Form::open(['route' => 'coins.selectCoin']) !!}
                     {!! Form::select('countrySelect', $countrySelect, request()->input('countrySelect'), ['class' => 'form-select mb-1', 'onchange' => 'form.submit()','placeholder' => __('views.allCountries')]) !!}
-                    {!! Form::select('typeSelect', $typeSelect, request()->input('typeSelect'), ['class' => 'form-select mb-1', 'onchange' => 'form.submit()']) !!}
+                    {!! Form::select('typeSelect', $typeSelect, request()->input('typeSelect'), ['class' => 'form-select mb-1', 'onchange' => 'form.submit()','placeholder' => __('views.allTypes')]) !!}
                     {!! Form::select('yearSelect', $yearSelect, request()->input('yearSelect'), ['class' => 'form-select mb-1', 'onchange' => 'form.submit()','placeholder' => __('views.allYears')]) !!}
                     {!! Form::close() !!}
                 </div>

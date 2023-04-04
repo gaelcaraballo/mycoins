@@ -5,34 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Fixed the login icon error">
-      <change afterPath="$PROJECT_DIR$/frontEnd/lang/en/coins.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/lang/en/places.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/lang/es/coins.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/lang/es/places.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/lang/fr/coins.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/lang/fr/places.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/lang/pt/coins.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontEnd/lang/pt/places.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/en/usersmanagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/en/usersmanagement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/en/views.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/en/views.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/es/views.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/es/views.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/fr/views.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/fr/views.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/pt/views.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/pt/views.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/coins/catalog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/coins/catalog.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/coins/detailedCoin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/coins/detailedCoin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/selectPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/selectPlace.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/users/detailedUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/users/detailedUser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/selectPlace.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/users/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/users/users.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,24 +180,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/DAW 2n/M12 - Projecte Final/mycoins/frontEnd/lang/pt",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.webpack",
-    "ts.external.directory.path": "C:\\Users\\gaelc\\AppData\\Local\\JetBrains\\Toolbox\\apps\\PhpStorm\\ch-0\\223.8836.42\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/DAW 2n/M12 - Projecte Final/mycoins/frontEnd/lang/pt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.webpack&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\gaelc\\AppData\\Local\\JetBrains\\Toolbox\\apps\\PhpStorm\\ch-0\\223.8836.42\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="main" />
@@ -246,6 +230,8 @@
       <workItem from="1680382179451" duration="5041000" />
       <workItem from="1680432309674" duration="22624000" />
       <workItem from="1680517879977" duration="13650000" />
+      <workItem from="1680606525963" duration="12475000" />
+      <workItem from="1680629769208" duration="6618000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>

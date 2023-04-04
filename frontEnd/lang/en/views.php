@@ -23,6 +23,7 @@ return [
     'cityName' => 'City',
     'allCountries' => 'All Countries',
     'allYears' => 'All Years',
+    'allTypes' => 'All Types',
     'description' => 'Description',
     'createdAt' => 'Created at',
 ];

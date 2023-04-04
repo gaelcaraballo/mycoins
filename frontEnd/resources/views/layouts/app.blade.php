@@ -27,7 +27,7 @@
 <body>
 <div id="app">
     <!--Main Navigation-->
-    @if(auth()->check() && auth()->user()->isAdmin)
+    @if(auth()->check() && Auth::user()->isAdmin)
         <div class="offcanvas offcanvas-start w-25" id="offcanvas" data-bs-backdrop="false">
             <div class="offcanvas-header bg-light shadow-sm">
                 <b>Developer Menu</b>
@@ -44,7 +44,7 @@
                             <i class="fs-5 bi-shop-window"></i><span class="ms-1">@lang('places.places')</span></a>
                     </li>
                     <li>
-                        <a href="{{ route('catalog', ['id' => '0']) }}" class="nav-link text-dark fw-bold">
+                        <a href="{{route('catalog')}}" class="nav-link text-dark fw-bold">
                             <i class="fs-5 bi-coin"></i><span class="ms-1">@lang('coins.coins')</span></a>
                     </li>
                     <li>
@@ -60,7 +60,7 @@
         <div class="container-fluid fw-bold">
             <!-- Left Side Of Navbar -->
             <div class="col d-flex leftMenuAdmin">
-                @if(auth()->check() && auth()->user()->isAdmin)
+                @if(auth()->check() && Auth::user()->isAdmin)
                     <a class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
                         <i class="bi bi-list"></i><b class="appName ms-1">{{ config('app.name', 'MyCoins') }}</b>
                     </a>
@@ -94,8 +94,8 @@
                     <div class="profileIcon nav-item dropdown">
                         <a class="nav-link d-flex" data-bs-toggle="dropdown" href="">
                             <img alt="" class="rounded-circle me-1" width="30px"
-                                 src="{{asset('assets/avatars/'.auth()->user()->avatar)}}">
-                            <div class="my-auto dropdown-toggle">{{auth()->user()->nickname}}</div>
+                                 src="{{asset('assets/avatars/'.Auth::user()->avatar)}}">
+                            <div class="my-auto dropdown-toggle">{{Auth::user()->nickname}}</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item border-bottom fw-bold" href="{{route('profile')}}">

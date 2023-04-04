@@ -35,7 +35,6 @@
                         <div class="row row-cols-2">
                             <div class="col">
                                 <label for="street_name" class="mt-3 fw-bold">@lang('views.streetName')</label>
-
                             </div>
                             <div class="col">
                                 <label for="country_id" class="mt-3 fw-bold">@lang('auth.country')</label>
@@ -49,8 +48,7 @@
                             </div>
                             <div class="col">
                                 <div class="mb-1">
-                                    <span id="country_id" class="form-control"></span>
-                                    <input type="hidden" name="country_id" id="country_id_input">
+                                    <input type="text" name="country_id" class="form-control" id="country_id">
                                 </div>
                             </div>
                         </div>

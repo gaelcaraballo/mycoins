@@ -34,7 +34,7 @@
                             @lang('views.description'):
                             <b class="text-break">{{$detailedCoin->description}}</b>
                         </div>
-                        @if(auth()->user()->isAdmin)
+                        @if(Auth::user()->isAdmin)
                             <div>
                                 @lang('views.createdAt'):
                                 <i>{{Carbon::parse($detailedCoin->created_at)->format('d M, Y')}}</i>

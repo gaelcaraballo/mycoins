@@ -23,6 +23,7 @@ return [
     'cityName' => 'Ville',
     'allCountries' => 'Tous les pays',
     'allYears' => 'Tous années',
+    'allTypes' => 'Tous les types',
     'description' => 'Description',
     'createdAt' => 'Créé à',
 ];

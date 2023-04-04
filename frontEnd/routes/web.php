@@ -59,8 +59,8 @@ Route::group(["middleware" => "auth"], function () {
         Route::get("/delete/{id}", [PlaceController::class, "delete"])->name("places.delete");
     });
     Route::group(["prefix" => "coins"], function () {
-        Route::get("/catalog/{id}", [CoinController::class, "catalog"])->name("catalog");
-        Route::post("/selectCoin", [CoinController::class, "selectCoin"])->name("coins.selectCoin");
+        Route::get("/catalog/{id?}", [CoinController::class, "catalog"])->name("catalog");
+        Route::post("/catalog", [CoinController::class, "selectCoin"])->name("coins.selectCoin");
         Route::get("/addToMyCollection/{id}/{year}", [CoinController::class, "addToMyCollection"])->name("addToMyCollection");
         Route::get("/detailedCoin/{id}", [CoinController::class, "detailedCoin"])->name("coins.detailedCoin");
     });

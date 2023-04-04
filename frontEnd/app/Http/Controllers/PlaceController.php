@@ -27,7 +27,6 @@ class PlaceController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->input('country_id'));
         $place = Place::find($request->id);
         $place->country_id = $request->country_id;
         $place->save();
@@ -107,7 +106,6 @@ class PlaceController extends Controller
         $place = Place::findOrFail($id);
         $place->isAccepted = !$place->isAccepted;
         $place->save();
-
         return redirect()->back();
     }
 }
