@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid mt-4 mb-4">
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
-            <form action="{{ route('places.update', ['id' => $detailedPlace->id]) }}" method="POST">
+            <form action="{{ route('places.update', ['place' => $detailedPlace->id]) }}" method="POST">
                 <div class="d-flex justify-content-between mt-1 border-bottom">
                     <h2>@lang('places.places')</h2>
                     @if(Auth::user()->isAdmin)

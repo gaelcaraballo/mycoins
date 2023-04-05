@@ -17,7 +17,7 @@ class CreateCollectionTable extends Migration
             $table->bigIncrements('id');
             $table->text('coin_id');
             $table->text('year');
-            $table->text('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
         });
     }

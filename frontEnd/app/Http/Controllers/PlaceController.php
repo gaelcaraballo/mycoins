@@ -48,9 +48,8 @@ class PlaceController extends Controller
         return redirect()->route('places')->with(compact('countries', 'places'));
     }
 
-    public function update(Request $request)
+    public function update(Place $place, Request $request)
     {
-        $place = Place::find($request->id);
         $request->validate([
             'city_name' => 'required|string|min:2|max:50',
             'postcode' => 'required',
@@ -74,16 +73,16 @@ class PlaceController extends Controller
         return redirect()->back()->with(compact('countries', 'places'));
     }
 
-    public function delete($id)
+    public function delete(Place $place)
     {
-        Place::destroy($id);
-        return redirect("places");
+        Place::destroy($place->id);
+        return redirect('/places');
     }
 
-    public function detailedPlace($id): Factory|View|Application
+    public function detailedPlace(Place $place): Factory|View|Application
     {
+        $detailedPlace = $place;
         $countries = Country::select("id", "country_name")->get();
-        $detailedPlace = Place::find($id);
         return view("places/detailedPlace", compact('detailedPlace', 'countries'))->with('success', '');
     }
 
@@ -101,9 +100,8 @@ class PlaceController extends Controller
         return view('places/places', compact('places', 'query'));
     }
 
-    public function toggle($id)
+    public function toggle(Place $place)
     {
-        $place = Place::findOrFail($id);
         $place->isAccepted = !$place->isAccepted;
         $place->save();
         return redirect()->back();

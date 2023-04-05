@@ -17,19 +17,12 @@ class ProfileController extends Controller
         return view("/profile", ["countries" => Country::select("id", "country_name")->get()]);
     }
 
-    public function update($id, Request $request)
+    public function update(User $user, Request $request)
     {
-        $user = User::findOrFail($id);
         $request->validate([
-            'nickname' => [
-                'required', 'string', 'min:4', 'max:20',
-                Rule::unique('users')->ignore(auth()->id()),
-            ],
+            'nickname' => ['required', 'string', 'min:4', 'max:20', Rule::unique('users')->ignore($user->id)],
             'avatar' => 'mimes:png,jpg,jpeg|max:2048',
-            'email' => [
-                'required', 'string', 'email', 'max:255',
-                Rule::unique('users')->ignore(auth()->id()),
-            ],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'name' => 'regex:/^[a-zA-Z]+$/u|max:50',
             'surname' => 'regex:/^[a-zA-Z]+$/u|max:50',
         ]);
@@ -39,9 +32,8 @@ class ProfileController extends Controller
             $filename = time() . '.' . $request->file('avatar')->getClientOriginalExtension();
             $request->file('avatar')->move(public_path('assets/avatars'), $filename);
             $user->avatar = $filename;
+            $user->save();
         }
-        $user->save();
-        abort_if($user->id !== auth()->id(), 403);
 
         return redirect('profile')->with('success', '');
     }
@@ -59,9 +51,9 @@ class ProfileController extends Controller
     }
 
 
-    public function delete($id)
+    public function destroy(User $user)
     {
-        User::destroy($id);
+        User::destroy($user);
         Auth::logout();
         Session::invalidate();
         return redirect('login');

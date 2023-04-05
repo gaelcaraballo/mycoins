@@ -21,12 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable();
             $table->string('surname')->nullable();
             $table->string('avatar');
-            $table->string('isAdmin')->default(0);
-            //$table->unsignedBigInteger('collection_id');
+            $table->string('isAdmin')->default(false);
+            $table->unsignedBigInteger('collection_id')->nullable();
+            $table->foreign('collection_id')->references('id')->on('collection')->onDelete('cascade');
             $table->unsignedBigInteger('country_id');
-            //$table->foreign('collection_id')->references('collection_id')->on('collection');
             $table->foreign('country_id')->references('id')->on('countries');
             $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

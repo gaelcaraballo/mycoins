@@ -4,17 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Fixed the login icon error">
+    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Fixed bunch of errors, like search coins, url and path names...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/MenuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/database/migrations/2022_11_02_144108_create_collection_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/database/migrations/2022_11_02_144108_create_collection_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/database/migrations/2022_11_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/database/migrations/2022_11_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/lang/en/coins.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/en/coins.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/lang/es/coins.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/es/coins.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/lang/fr/coins.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/fr/coins.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/lang/pt/coins.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/pt/coins.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/coins/catalog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/coins/catalog.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/coins/detailedCoin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/coins/detailedCoin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/selectPlace.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/users/detailedUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/users/detailedUser.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/users/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/users/users.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/routes/web.php" afterDir="false" />
     </list>
@@ -231,7 +240,8 @@
       <workItem from="1680432309674" duration="22624000" />
       <workItem from="1680517879977" duration="13650000" />
       <workItem from="1680606525963" duration="12475000" />
-      <workItem from="1680629769208" duration="6618000" />
+      <workItem from="1680629769208" duration="9797000" />
+      <workItem from="1680687710200" duration="25915000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -387,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680518471765</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="-Fixed bunch of errors, like search coins, url and path names...">
+      <created>1680644632158</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680644632158</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +425,8 @@
     <MESSAGE value="-Now you can see the detailed places correctly, the lat and lng are correct!" />
     <MESSAGE value="-Fixed bunch of errors" />
     <MESSAGE value="-Fixed the login icon error" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Fixed the login icon error" />
+    <MESSAGE value="-Fixed bunch of errors, like search coins, url and path names..." />
+    <option name="LAST_COMMIT_MESSAGE" value="-Fixed bunch of errors, like search coins, url and path names..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

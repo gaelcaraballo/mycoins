@@ -39,37 +39,38 @@ Route::get("locale/{id}", function ($locale) {
     return redirect()->back();
 });
 
-//AUTHENTICATED PAGES
-Route::group(["middleware" => "auth"], function () {
-    //CODE VIEWS
+Route::middleware(["auth"])->group(function () {
+    //PROFILE CONTROLLER
     Route::group(["prefix" => "profile"], function () {
         Route::get("/", [ProfileController::class, "profile"])->name("profile");
         Route::get("/delete/{id}", [ProfileController::class, "delete"])->name("profile.delete");
-        Route::post("/update/{id}", [ProfileController::class, "update"])->name("profile.update");
+        Route::post("/update/{user}", [ProfileController::class, "update"])->name("profile.update");
         Route::get('/delete-avatar', [ProfileController::class, "deleteAvatar"])->name('delete-avatar');
     });
+    //PLACE CONTROLLER
     Route::group(["prefix" => "places"], function () {
         Route::get("/", [PlaceController::class, "all"])->name("places");
         Route::get("/searchPlace", [PlaceController::class, "searchPlace"])->name("places.searchPlace");
-        Route::get("/detailedPlace/{id}", [PlaceController::class, "detailedPlace"])->name("places.detailedPlace");
+        Route::get("/detailedPlace/{place}", [PlaceController::class, "detailedPlace"])->name("places.detailedPlace");
         Route::get("/addPlace", [PlaceController::class, "addPlace"])->name("places.addPlace");
         Route::post("/store", [PlaceController::class, "store"])->name("places.store");
-        Route::post("/update/{id}", [PlaceController::class, "update"])->name("places.update");
-        Route::post("/places/{id}/toggle", [PlaceController::class, "toggle"])->name("places.toggle");
-        Route::get("/delete/{id}", [PlaceController::class, "delete"])->name("places.delete");
+        Route::post("/update/{place}", [PlaceController::class, "update"])->name("places.update");
+        Route::post("/places/{place}/toggle", [PlaceController::class, "toggle"])->name("places.toggle");
+        Route::get("/delete/{place}", [PlaceController::class, "delete"])->name("places.delete");
     });
-    Route::group(["prefix" => "coins"], function () {
-        Route::get("/catalog/{id?}", [CoinController::class, "catalog"])->name("catalog");
+    //COIN CONTROLLER
+    Route::prefix("coins")->group(function () {
+        Route::get("/catalog/{coin?}", [CoinController::class, "catalog"])->name("catalog");
         Route::post("/catalog", [CoinController::class, "selectCoin"])->name("coins.selectCoin");
-        Route::get("/addToMyCollection/{id}/{year}", [CoinController::class, "addToMyCollection"])->name("addToMyCollection");
-        Route::get("/detailedCoin/{id}", [CoinController::class, "detailedCoin"])->name("coins.detailedCoin");
+        Route::get("/addToMyCollection/{coin}/{year}", [CoinController::class, "addToMyCollection"])->name("addToMyCollection");
+        Route::get("/detailedCoin/{coin}", [CoinController::class, "detailedCoin"])->name("coins.detailedCoin");
     });
-    Route::get("/statistics", [StatController::class, "statistics"])->name("statistics");
-
-    Route::group(["prefix" => "users"], function () {
+    //USER CONTROLLER
+    Route::prefix("users")->group(function () {
         Route::get("/", [UserController::class, "all"])->name("users");
-        Route::get("/detailedUser/{id}", [UserController::class, "detailedUser"])->name("users.detailedUser");
+        Route::get("/detailedUser/{user}", [UserController::class, "detailedUser"])->name("users.detailedUser");
         Route::get("/delete/{user}", [UserController::class, "delete"])->name("users.delete");
         Route::post("/selectCountry", [UserController::class, "selectCountry"])->name("users.selectCountry");
     });
+    Route::get("/statistics", [StatController::class, "statistics"])->name("statistics");
 });

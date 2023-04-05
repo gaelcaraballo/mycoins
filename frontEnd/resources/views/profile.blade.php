@@ -41,7 +41,7 @@
                                         <label for="email" class="mt-3 fw-bold">@lang('profile.profileEmail')</label>
                                         <input class="form-control @error('email') is-invalid @enderror" type="email"
                                                name="email" id="email"
-                                               value="{{Auth::user()->email }}">
+                                               value="{{ old('email', Auth::user()->email) }}">
                                         @error('email')
                                         <div class="invalid-feedback">{{$message}}</div>
                                         @enderror

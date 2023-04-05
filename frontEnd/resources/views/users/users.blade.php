@@ -35,7 +35,7 @@
                                 <div class="me-5 collection">
                                     <span class="text-secondary">Collection</span>
                                     <h5 class="text-center">
-                                        <span class="text-decoration-none">{{$user->coin_count}}</span>
+                                        <span class="text-decoration-none">{{$user->collection_count}}</span>
                                     </h5>
                                 </div>
                             </div>

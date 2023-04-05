@@ -2,18 +2,18 @@
 @extends('layouts.app')
 @section('content')
     <div class="container col-12 col-sm-9 col-md-7 col-lg-7 col-xl-6 mt-4 mb-4">
-        <h2 class="border-bottom fw-bold">{{$detailedUser->nickname}}</h2>
+        <h2 class="border-bottom fw-bold">{{$user->nickname}}</h2>
         <div class="border">
             <div class="row row-cols-2">
                 <div class="col-4 col-sm-3">
                     <img alt="" class="rounded-circle w-100 m-2"
-                         src="{{asset('assets/avatars/'.$detailedUser->avatar)}}">
+                         src="{{asset('assets/avatars/'.$user->avatar)}}">
                 </div>
                 <div class="col-8 col-sm-9 mt-3 mb-3">
                     <div>
                         @lang('views.localization'):
-                        <span class="fw-bold">{{$detailedUser->country->country_name}}</span>
-                        <img width="7%" src="{{asset('assets/flags/'.$detailedUser->country->country_image)}}" alt="">
+                        <span class="fw-bold">{{$user->country->country_name}}</span>
+                        <img width="7%" src="{{asset('assets/flags/'.$user->country->country_image)}}" alt="">
                     </div>
                     <div>
                         @lang('views.collection'):
@@ -21,14 +21,14 @@
                     </div>
                     <div>
                         @lang('views.memberSince'):
-                        <span class="fw-bold">{{Carbon::parse($detailedUser->created_at)->format('d M, Y')}}</span>
+                        <span class="fw-bold">{{Carbon::parse($user->created_at)->format('d M, Y')}}</span>
                     </div>
                 </div>
             </div>
         </div>
         <h4 class="mt-1">@lang('views.collection')</h4>
         @if(count($coins) <= 0)
-            <div class="alert alert-success" aria-label="Close">@lang('coins.noCoins')</div>
+            <div class="alert alert-success" aria-label="Close">@lang('coins.noUserCoins')</div>
         @else
             <div class="border d-flex bg-dark text-white">
                 @foreach($coins as $coin)
@@ -42,7 +42,7 @@
                                 <small>{{$coin->name}}</small>
                             </div>
                         </div>
-                        <a href="{{route('coins.detailedCoin', ['id'=>$coin->id])}}">
+                        <a href="{{route('coins.detailedCoin', ['coin'=>$coin->id])}}">
                             <img src="{{asset('/assets/coins/'.$coin->image)}}" alt=""
                                  class="w-75 m-3 img-fluid rounded-circle">
                         </a>

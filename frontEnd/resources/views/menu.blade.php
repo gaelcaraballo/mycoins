@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{asset('css/menu.css')}}">
     <div class="container-fluid mb-4 mt-4">
         <div class="row row-cols-1 row-cols-sm-3 d-flex justify-content-center">
-            <a href="{{ route('catalog', ['id' => 'commemorative']) }}"
+            <a href="{{ route('catalog', ['coin' => 'commemorative']) }}"
                class="commemorativeImage m-3 col-md-3 col-sm-6 col-8 border border-3 border-dark rounded text-decoration-none text-dark">
                 <h5 class="mt-2 fw-bold">
                     @lang('views.commemorative')<br>
@@ -12,7 +12,7 @@
                     @endauth
                 </h5>
             </a>
-            <a href="{{ route('catalog', ['id' => 'circulation']) }}"
+            <a href="{{ route('catalog', ['coin' => 'circulation']) }}"
                class="circulationBg m-3 col-md-3 col-sm-6 border col-8 border-3 border-dark rounded text-decoration-none text-dark">
                 <h5 class="mt-2 fw-bold">
                     @lang('views.circulation')<br>

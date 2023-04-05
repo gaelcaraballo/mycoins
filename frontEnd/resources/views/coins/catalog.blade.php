@@ -1,4 +1,4 @@
-@php use App\Models\Collection;@endphp
+@php use App\Models\Collection; use App\Models\Coin;@endphp
 @extends('layouts.app')
 @section('content')
     <link rel="stylesheet" href="{{asset('css/coins.css')}}">
@@ -9,7 +9,7 @@
                 <div class="align-content-between m-1">
                     {!! Form::open(['route' => 'coins.selectCoin']) !!}
                     {!! Form::select('countrySelect', $countrySelect, request()->input('countrySelect'), ['class' => 'form-select mb-1', 'onchange' => 'form.submit()','placeholder' => __('views.allCountries')]) !!}
-                    {!! Form::select('typeSelect', $typeSelect, request()->input('typeSelect'), ['class' => 'form-select mb-1', 'onchange' => 'form.submit()','placeholder' => __('views.allTypes')]) !!}
+                    {!! Form::select('typeSelect', Coin::groupBy('type')->pluck('type', 'type'), $selectedType ?? request()->input('typeSelect'), ['class' => 'form-select mb-1', 'onchange' => 'form.submit()', 'placeholder' => __('views.allTypes')]) !!}
                     {!! Form::select('yearSelect', $yearSelect, request()->input('yearSelect'), ['class' => 'form-select mb-1', 'onchange' => 'form.submit()','placeholder' => __('views.allYears')]) !!}
                     {!! Form::close() !!}
                 </div>
@@ -27,7 +27,7 @@
                                      src="{{asset('assets/flags/'.$coin->country->country_image)}}"
                                      alt="{{$coin->country_name}}">
                                 @auth()
-                                    <a href="{{route('addToMyCollection', ['id' =>$coin->id, 'year' => $coin->year[0]])}}"
+                                    <a href="{{route('addToMyCollection', ['coin' => $coin, 'year' => $coin->year[0]])}}"
                                        @if(sizeof($coin->year) >1) data-bs-target="#flush-collapseOne{{$coin->id}}"
                                        data-bs-toggle="collapse" @endif>
                                         @if(Collection::where('coin_id', $coin->id)->where('year', $coin->year[0])->where('user_id',auth()->id())->count() !==0)
@@ -42,7 +42,7 @@
                                 @endauth
                             </div>
                             <div class="d-flex justify-content-center row">
-                                <a href="{{route('coins.detailedCoin', ['id'=>$coin->id])}}"
+                                <a href="{{route('coins.detailedCoin', ['coin'=>$coin])}}"
                                    class="text-decoration-none text-white">
                                     <small class="coinName">{{$coin->name}}</small>
                                     <img src="{{asset('/assets/coins/'.$coin->image)}}" alt="{{$coin->name}}"
@@ -60,7 +60,7 @@
                                         @foreach($coin->year as $year)
                                             <div class="d-flex mb-1">
                                                 <small class="mt-1">{{$year}}</small>
-                                                <a href="{{route('addToMyCollection', ['id' =>$coin->id, 'year' => $year])}}"
+                                                <a href="{{route('addToMyCollection', ['coin' => $coin, 'year' => $year])}}"
                                                    class="ms-auto">
                                                     @if(Collection::where('coin_id', $coin->id)->where('year', $year)->where('user_id',auth()->id())->count() !==0)
                                                         <i class="text-warning bi bi-star-fill"></i>

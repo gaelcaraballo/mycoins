@@ -74,7 +74,7 @@
             <div class="justify-content-center">
                 <div style="border-bottom: 2px solid darkblue">
                     <b
-                        class="text-truncate col-1">{{ucfirst($detailedUser->nickname ?? $detailedCoin->name ?? $detailedPlace->city_name ?? File::basename(Request::path()))}}</b>
+                        class="text-truncate col-1">{{ucfirst($user->nickname ?? $coin->name ?? $detailedPlace->city_name ?? File::basename(Request::path()))}}</b>
                 </div>
             </div>
             <!-- Right Side Of Navbar -->
