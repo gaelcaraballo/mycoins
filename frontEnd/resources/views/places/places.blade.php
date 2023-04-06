@@ -13,7 +13,7 @@
                 {!!Form::text('searchPlace', null, ['placeholder' => __('views.search'), 'class' => 'form-control', 'id'=>'search-input'])!!}
                 {!!Form::submit(__('views.search'), ['class' => 'btn btn-primary ms-2 ', 'id'=>'search-btn'])!!}
                 @isset($query)
-                    {!!Form::button((__($query).'<i class="bi bi-x"></i>'), ['class' => 'ms-1 btn border d-flex', 'onclick'=> "document.getElementById('search-btn').click()"])!!}
+                    {!!Form::button(($query.'<i class="bi bi-x"></i>'), ['class' => 'ms-1 btn border d-flex', 'onclick'=> "document.getElementById('search-btn').click()"])!!}
                 @endisset
                 {!!Form::close()!!}
             </div>

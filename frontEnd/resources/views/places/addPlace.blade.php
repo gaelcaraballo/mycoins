@@ -48,7 +48,7 @@
                             </div>
                             <div class="col">
                                 <div class="mb-1">
-                                    <input type="text" name="country_id" class="form-control" id="country_id">
+                                    <input type="text" name="country" class="form-control" id="country">
                                 </div>
                             </div>
                         </div>

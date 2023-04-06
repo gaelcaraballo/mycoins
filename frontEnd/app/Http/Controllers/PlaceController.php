@@ -8,11 +8,13 @@ use App\Models\Place;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 
 class PlaceController extends Controller
 {
-    public function all()
+    public function all(): Factory|View|Application
     {
         return view("/places/places",
             ["countries" => Coin::join('countries', 'coins.country_id', '=', 'countries.id')
@@ -20,36 +22,33 @@ class PlaceController extends Controller
                 "places" => Place::paginate(20)]);
     }
 
-    public function addPlace()
+    public function addPlace(): Factory|View|Application
     {
         return view("/places/addPlace");
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        dd($request->all());
-        $place = Place::find($request->id);
-        $place->country_id = $request->country_id;
-        $place->save();
+        $country = Country::where('country_name', 'like', '%' . $request->country . '%')->pluck('id');
         $request->validate([
             'city_name' => 'required|string|min:2|max:50',
             'postcode' => 'required',
             'street_name' => 'required|string|min:10|max:50',
         ]);
 
-        Place::create($request->only(['city_name', 'postcode', 'street_name', 'country_id', 'latitude', 'longitude']));
-
-        $countries = Coin::join('countries', 'coins.country_id', '=', 'countries.id')
-            ->select('countries.country_name', 'countries.id')
-            ->distinct()
-            ->pluck('country_name', 'id');
-
+        Place::create([
+            'city_name' => $request->city_name,
+            'postcode' => $request->postcode,
+            'street_name' => $request->street_name,
+            'country_id' => $country[0],
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude
+        ]);
         $places = Place::all();
-
-        return redirect()->route('places')->with(compact('countries', 'places'));
+        return redirect()->route('places')->with(compact('places'));
     }
 
-    public function update(Place $place, Request $request)
+    public function update(Place $place, Request $request): RedirectResponse
     {
         $request->validate([
             'city_name' => 'required|string|min:2|max:50',
@@ -74,7 +73,7 @@ class PlaceController extends Controller
         return redirect()->back()->with(compact('countries', 'places'));
     }
 
-    public function delete(Place $place)
+    public function delete(Place $place): Redirector|Application|RedirectResponse
     {
         Place::destroy($place->id);
         return redirect('/places');
@@ -87,7 +86,7 @@ class PlaceController extends Controller
         return view("places/detailedPlace", compact('detailedPlace', 'countries'))->with('success', '');
     }
 
-    public function searchPlace(Request $request)
+    public function searchPlace(Request $request): Factory|View|Application
     {
         $query = $request->input('searchPlace');
         $places = Place::where('city_name', 'LIKE', "%$query%")->orWhere('postcode', 'LIKE', "%$query%")
@@ -101,7 +100,7 @@ class PlaceController extends Controller
         return view('places/places', compact('places', 'query'));
     }
 
-    public function toggle(Place $place)
+    public function toggle(Place $place): RedirectResponse
     {
         $place->isAccepted = !$place->isAccepted;
         $place->save();
