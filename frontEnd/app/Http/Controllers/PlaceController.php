@@ -27,6 +27,7 @@ class PlaceController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->all());
         $place = Place::find($request->id);
         $place->country_id = $request->country_id;
         $place->save();

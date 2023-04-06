@@ -4,28 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Fixed bunch of errors, like search coins, url and path names...">
+    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Optimizing the code to make it more readable and structured.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/MenuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/database/migrations/2022_11_02_144108_create_collection_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/database/migrations/2022_11_02_144108_create_collection_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/database/migrations/2022_11_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/database/migrations/2022_11_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/en/coins.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/en/coins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/es/coins.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/es/coins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/fr/coins.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/fr/coins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/lang/pt/coins.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/lang/pt/coins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/coins/catalog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/coins/catalog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/coins/detailedCoin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/coins/detailedCoin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/users/detailedUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/users/detailedUser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/users/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/users/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +222,8 @@
       <workItem from="1680517879977" duration="13650000" />
       <workItem from="1680606525963" duration="12475000" />
       <workItem from="1680629769208" duration="9797000" />
-      <workItem from="1680687710200" duration="25915000" />
+      <workItem from="1680687710200" duration="25982000" />
+      <workItem from="1680788226904" duration="6257000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -404,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680644632158</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="-Optimizing the code to make it more readable and structured.">
+      <created>1680738232529</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680738232529</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +415,8 @@
     <MESSAGE value="-Fixed bunch of errors" />
     <MESSAGE value="-Fixed the login icon error" />
     <MESSAGE value="-Fixed bunch of errors, like search coins, url and path names..." />
-    <option name="LAST_COMMIT_MESSAGE" value="-Fixed bunch of errors, like search coins, url and path names..." />
+    <MESSAGE value="-Optimizing the code to make it more readable and structured." />
+    <option name="LAST_COMMIT_MESSAGE" value="-Optimizing the code to make it more readable and structured." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
