@@ -14,7 +14,6 @@ class Coin extends Model
     protected $casts = ["year" => "array"];
     public $timestamps = true;
 
-
     public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);

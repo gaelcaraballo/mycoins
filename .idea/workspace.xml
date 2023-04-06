@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Now the addresses are displayed automatically,">
+    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Places can be created normally.">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Models/Coin.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Models/Coin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +165,9 @@
       <path value="$PROJECT_DIR$/frontEnd/vendor/symfony/mime" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2NgnhoH7eZZqdMJSVpwIw0OgJzt" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -187,6 +190,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "settings.webpack",
     "ts.external.directory.path": "C:\\Users\\gaelc\\AppData\\Local\\JetBrains\\Toolbox\\apps\\PhpStorm\\ch-0\\223.8836.42\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
@@ -230,7 +234,8 @@
       <workItem from="1680788226904" duration="6546000" />
       <workItem from="1680796439678" duration="119000" />
       <workItem from="1680796575308" duration="147000" />
-      <workItem from="1680796737097" duration="1882000" />
+      <workItem from="1680796737097" duration="11507000" />
+      <workItem from="1680815610958" duration="6663000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -407,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680796378561</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="-Places can be created normally.">
+      <created>1680798918242</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1680798918242</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +443,8 @@
     <MESSAGE value="-Fixed bunch of errors, like search coins, url and path names..." />
     <MESSAGE value="-Optimizing the code to make it more readable and structured." />
     <MESSAGE value="-Now the addresses are displayed automatically," />
-    <option name="LAST_COMMIT_MESSAGE" value="-Now the addresses are displayed automatically," />
+    <MESSAGE value="-Places can be created normally." />
+    <option name="LAST_COMMIT_MESSAGE" value="-Places can be created normally." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

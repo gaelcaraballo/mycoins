@@ -35,7 +35,6 @@ class PlaceController extends Controller
             'postcode' => 'required',
             'street_name' => 'required|string|min:10|max:50',
         ]);
-
         Place::create([
             'city_name' => $request->city_name,
             'postcode' => $request->postcode,
@@ -50,6 +49,7 @@ class PlaceController extends Controller
 
     public function update(Place $place, Request $request): RedirectResponse
     {
+        $country = Country::where('country_name', 'like', '%' . $request->country . '%')->pluck('id');
         $request->validate([
             'city_name' => 'required|string|min:2|max:50',
             'postcode' => 'required',
@@ -58,19 +58,12 @@ class PlaceController extends Controller
         $place->city_name = $request->city_name;
         $place->postcode = $request->postcode;
         $place->street_name = $request->street_name;
-        $place->country_id = $request->country_id;
+        $place->country_id = $country[0];
         $place->latitude = $request->latitude;
         $place->longitude = $request->longitude;
         $place->save();
-
-        $countries = Coin::join('countries', 'coins.country_id', '=', 'countries.id')
-            ->select('countries.country_name', 'countries.id')
-            ->distinct()
-            ->pluck('country_name', 'id');
-
         $places = Place::all();
-
-        return redirect()->back()->with(compact('countries', 'places'));
+        return redirect()->route('places')->with(compact('places'));
     }
 
     public function delete(Place $place): Redirector|Application|RedirectResponse
