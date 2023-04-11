@@ -31,7 +31,6 @@
       <path value="$PROJECT_DIR$/frontEnd/vendor/league/config" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/league/mime-type-detection" />
-      <path value="$PROJECT_DIR$/frontEnd/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/spatie/backtrace" />
@@ -124,6 +123,7 @@
       <path value="$PROJECT_DIR$/frontEnd/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/composer" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/frontEnd/vendor/nesbot/carbon" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

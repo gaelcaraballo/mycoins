@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Places can be created normally.">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/app/Providers/BroadcastServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/public/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +73,6 @@
       <path value="$PROJECT_DIR$/frontEnd/vendor/league/config" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/league/mime-type-detection" />
-      <path value="$PROJECT_DIR$/frontEnd/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/spatie/backtrace" />
@@ -164,6 +165,7 @@
       <path value="$PROJECT_DIR$/frontEnd/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/composer" />
       <path value="$PROJECT_DIR$/frontEnd/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/frontEnd/vendor/nesbot/carbon" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -239,7 +241,8 @@
       <workItem from="1680796575308" duration="147000" />
       <workItem from="1680796737097" duration="11507000" />
       <workItem from="1680815610958" duration="6698000" />
-      <workItem from="1681148226935" duration="7807000" />
+      <workItem from="1681148226935" duration="7951000" />
+      <workItem from="1681236015263" duration="9108000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -430,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680825363166</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="-Places can be created normally.">
+      <created>1681159763196</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1681159763196</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

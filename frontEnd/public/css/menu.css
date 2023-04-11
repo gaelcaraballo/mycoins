@@ -1,6 +1,6 @@
 .commemorativeImage {
     height: 7rem;
-    background-image: url('/assets/coins/france_2022.png');
+    background-image: url('../assets/coins/france_2022.png');
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: left 120px center;
@@ -8,7 +8,7 @@
 
 .circulationBg {
     height: 7rem;
-    background-image: url('/assets/coins/france2.png');
+    background-image: url('../assets/coins/france2.png');
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: left 120px center;
@@ -16,7 +16,7 @@
 
 .swapBg {
     height: 7rem;
-    background-image: url('/assets/icons/placeIcon.png');
+    background-image: url('../assets/icons/placeIcon.png');
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: right;
@@ -24,7 +24,7 @@
 
 .usersBg {
     height: 7rem;
-    background-image: url('/assets/icons/usersIcon.png');
+    background-image: url('../assets/icons/usersIcon.png');
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: right;
@@ -32,7 +32,7 @@
 
 .statisticsIcon {
     height: 7rem;
-    background-image: url('/assets/icons/statisticsIcon.png');
+    background-image: url('../assets/icons/statisticsIcon.png');
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: left 100px center;
@@ -40,7 +40,7 @@
 
 .shopBg {
     height: 7rem;
-    background-image: url('/assets/icons/shopIcon.png');
+    background-image: url('../assets/icons/shopIcon.png');
     background-size: 45%;
     background-repeat: no-repeat;
     background-position: right;
@@ -51,3 +51,12 @@
     height: 50px;
     border-radius: 50%;
 }
+
+.social-icons a:hover {
+    background-color: black !important;
+}
+
+.social-icons a:hover i, path {
+    color: white !important;
+}
+
