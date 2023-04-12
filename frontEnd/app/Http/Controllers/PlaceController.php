@@ -51,6 +51,7 @@ class PlaceController extends Controller
     {
         $country = Country::where('country_name', 'like', '%' . $request->country . '%')->pluck('id');
         $request->validate([
+            'country' => 'required|exists:countries,country_name',
             'city_name' => 'required|string|min:2|max:50',
             'postcode' => 'required',
             'street_name' => 'required|string|min:10|max:50',
@@ -85,8 +86,7 @@ class PlaceController extends Controller
         $places = Place::where('city_name', 'LIKE', "%$query%")->orWhere('postcode', 'LIKE', "%$query%")
             ->orWhere('street_name', 'LIKE', "%$query%")->orWhereHas('country', function ($q) use ($query) {
                 $q->where('country_name', 'LIKE', "%$query%");
-            })
-            ->paginate(20);
+            })->simplePaginate(20);
         if (count($places) === 0) {
             $places = 0;
         }

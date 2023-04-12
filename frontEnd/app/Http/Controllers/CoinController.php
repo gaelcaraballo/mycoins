@@ -58,7 +58,7 @@ class CoinController extends Controller
             $query->whereJsonContains('year', $year->year);
         }
 
-        $coins = $query->paginate(15);
+        $coins = $query->simplePaginate(15);
 
         return view("/coins/catalog",
             ["coins" => $coins,
@@ -72,6 +72,6 @@ class CoinController extends Controller
 
     public function detailedCoin(Coin $coin): Factory|View|Application
     {
-        return view("coins/detailedCoin", ["coin" => $coin]);
+        return view("coins/detailedCoin", ["detailedCoin" => $coin]);
     }
 }

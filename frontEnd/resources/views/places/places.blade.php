@@ -30,8 +30,9 @@
                                 <a href="{{ route('places.detailedPlace', $place->id) }}"
                                    class="text-dark text-decoration-none">
                                     <div class="d-flex align-items-center">
-                                        <img alt="" class="flagIcon border img-fluid" style="width: 50px; height: 30px;"
-                                             src="{{asset('/assets/flags/'.$place->country->country_image)}}">
+                                        <img title="{{$place->country->country_name}}" class="flagIcon border img-fluid"
+                                             style="width: 50px; height: 30px;"
+                                             src="{{asset('/assets/flags/'.$place->country->country_image)}}" alt="">
                                         <div class="ms-2">
                                             <b>{{$place->city_name}}</b>
                                             ({{$place->postcode}})
@@ -62,26 +63,8 @@
                                         </button>
                                     @endif
                                 </div>
-                                <div id="map-{{$place->id}}" class="w-25 placeMap"></div>
                             </div>
                         </div>
-                        <script>
-                            {{--function initMap{{$place->id}}() {
-                                @foreach($places as $plc)
-                                let center{{$plc->id}} = {lat: {{$plc->latitude}}, lng: {{$plc->longitude}}};
-                                let map{{$plc->id}} = new google.maps.Map(document.getElementById('map-{{$plc->id}}'), {
-                                    zoom: 14,
-                                    center: center{{$plc->id}},
-                                });
-                                let marker{{$plc->id}} = new google.maps.Marker({
-                                    position: center{{$plc->id}},
-                                    map: map{{$plc->id}}
-                                });
-                                @endforeach
-                            }
-
-                            window.onload = initMap{{$place->id}};--}}
-                        </script>
                     @endforeach
                     <div class="d-flex justify-content-center">
                         {{$places->links()}}

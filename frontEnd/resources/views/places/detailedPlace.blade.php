@@ -52,7 +52,7 @@
                             </div>
                             <div class="col">
                                 <div class="mb-1">
-                                    <input type="text" name="country" class="form-control" id="country">
+                                    <input type="text" name="country" class="form-control" id="country" readonly>
                                 </div>
                             </div>
                         </div>
