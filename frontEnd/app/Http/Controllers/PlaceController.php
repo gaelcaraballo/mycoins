@@ -19,7 +19,7 @@ class PlaceController extends Controller
         return view("/places/places",
             ["countries" => Coin::join('countries', 'coins.country_id', '=', 'countries.id')
                 ->select('countries.country_name', 'countries.id')->distinct()->pluck('country_name', 'id'),
-                "places" => Place::paginate(20)]);
+                "places" => Place::simplePaginate(20)]);
     }
 
     public function addPlace(): Factory|View|Application

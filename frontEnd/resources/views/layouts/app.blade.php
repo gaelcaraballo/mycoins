@@ -83,11 +83,11 @@
                 @guest
                     <a href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right text-dark"></i></a>
                     @unless(request()->route()->getName() == 'login')
-                        <a class="logInIcon my-auto nav-link pe-1"
+                        <a class="logInIcon my-auto nav-link pe-2"
                            href="{{ route('login') }}">@lang('titles.login')</a>
                     @endunless
                     @unless(request()->route()->getName() == 'register')
-                        <a class="registerIcon my-auto nav-link border-start border-2 border-secondary ps-2"
+                        <a class="registerIcon my-auto nav-link border-start border-2 border-secondary ps-2 pe-2"
                            href="{{ route('register') }}">@lang('titles.register')</a>
                     @endunless
                 @else
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                 @endguest
-                <div class="langIcon nav-item dropdown ms-2 my-auto border-start border-2 border-secondary ps-2">
+                <div class="langIcon nav-item dropdown my-auto border-start border-2 border-secondary ps-2">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <span>{{strtoupper(App::getLocale())}}</span>
                         @if(App::getLocale() == 'en')

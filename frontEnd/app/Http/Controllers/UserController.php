@@ -55,7 +55,7 @@ class UserController extends Controller
             ->groupBy('coins.id')
             ->select('coins.*', DB::raw('GROUP_CONCAT(DISTINCT collection.year ORDER BY collection.year ASC SEPARATOR " - ") as userCoinInYears'))
             ->distinct()
-            ->paginate(4);
+            ->simplePaginate(4);
         $countCollection = $user->collection()->count();
         return view("users/detailedUser", compact('user', 'coins', 'countCollection'));
     }

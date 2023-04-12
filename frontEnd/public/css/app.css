@@ -5,20 +5,20 @@
     }
 
     #offcanvas {
-        width: 45% !important
+        width: 45% !important;
     }
 
     .rightMenuUser {
-        justify-content: flex-end !important
+        justify-content: flex-end !important;
     }
 
     .leftMenuAdmin {
-        justify-content: start !important
+        justify-content: start !important;
     }
 
     .bi-box-arrow-in-right {
         font-size: 20px;
-        display: revert !important
+        display: revert !important;
     }
 
     .logInIcon, .registerIcon {
@@ -31,7 +31,7 @@
 }
 
 .leftMenuAdmin, .rightMenuUser {
-    justify-content: center
+    justify-content: center;
 }
 
 .bi-box-arrow-in-right {

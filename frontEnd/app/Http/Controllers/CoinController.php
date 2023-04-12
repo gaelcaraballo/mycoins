@@ -20,7 +20,7 @@ class CoinController extends Controller
             $query->where('type', $coinType);
         }
 
-        $coins = $query->paginate(15);
+        $coins = $query->simplePaginate(15);
         return view('coins.catalog', [
             'coins' => $coins,
             'countrySelect' => Coin::join('countries', 'coins.country_id', '=', 'countries.id')
