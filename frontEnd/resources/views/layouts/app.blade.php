@@ -74,7 +74,7 @@
             <div class="justify-content-center">
                 <div style="border-bottom: 2px solid darkblue">
                     <b
-                        class="text-truncate col-1">{{ucfirst($user->nickname ?? $coin->name ?? $detailedPlace->city_name ?? File::basename(Request::path()))}}</b>
+                        class="text-truncate col-1">{{ucfirst($user->nickname ?? $detailedCoin->name ?? $detailedPlace->city_name ?? File::basename(Request::path()))}}</b>
                 </div>
             </div>
             <!-- Right Side Of Navbar -->
@@ -92,7 +92,7 @@
                     @endunless
                 @else
                     <div class="profileIcon nav-item dropdown">
-                        <a class="nav-link d-flex" data-bs-toggle="dropdown" href="">
+                        <a class="nav-link d-flex pe-2" data-bs-toggle="dropdown" href="">
                             <img alt="" class="rounded-circle me-1" width="30px"
                                  src="{{asset('assets/avatars/'.Auth::user()->avatar)}}">
                             <div class="my-auto dropdown-toggle">{{Auth::user()->nickname}}</div>
@@ -111,7 +111,8 @@
                     </div>
                 @endguest
                 <div class="langIcon nav-item dropdown my-auto border-start border-2 border-secondary ps-2">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
                         <span>{{strtoupper(App::getLocale())}}</span>
                         @if(App::getLocale() == 'en')
                             <img alt="" width="30px" src="{{asset('assets/flags/gb.png')}}">
@@ -119,7 +120,8 @@
                             <img alt="" width="30px" src="{{asset('assets/flags/'.App::getLocale().'.png')}}">
                         @endif
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end">
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"
+                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <a class="dropdown-item" href="{{url('locale/es')}}">ES
                             <img alt="" class="w-25" src="{{asset('assets/flags/es.png')}}"></a>
                         <a class="dropdown-item" href="{{url('locale/en')}}">EN
@@ -130,6 +132,7 @@
                             <img alt="" class="w-25" src="{{asset('assets/flags/pt.png')}}"></a>
                     </div>
                 </div>
+
             </div>
         </div>
     </nav>

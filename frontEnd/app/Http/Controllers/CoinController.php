@@ -72,6 +72,6 @@ class CoinController extends Controller
 
     public function detailedCoin(Coin $coin): Factory|View|Application
     {
-        return view("coins/detailedCoin", ["coin" => $coin]);
+        return view("coins/detailedCoin", ["detailedCoin" => $coin]);
     }
 }
