@@ -43,9 +43,9 @@ Route::middleware(["auth"])->group(function () {
     //PROFILE CONTROLLER
     Route::group(["prefix" => "profile"], function () {
         Route::get("/", [ProfileController::class, "profile"])->name("profile");
-        Route::get("/delete/{id}", [ProfileController::class, "delete"])->name("profile.delete");
+        Route::delete("/delete/{id}", [ProfileController::class, "delete"])->name("profile.delete");
         Route::post("/update/{user}", [ProfileController::class, "update"])->name("profile.update");
-        Route::get('/delete-avatar', [ProfileController::class, "deleteAvatar"])->name('delete-avatar');
+        Route::delete('/delete-avatar', [ProfileController::class, "deleteAvatar"])->name('delete-avatar');
     });
     //PLACE CONTROLLER
     Route::group(["prefix" => "places"], function () {
@@ -56,7 +56,7 @@ Route::middleware(["auth"])->group(function () {
         Route::post("/store", [PlaceController::class, "store"])->name("places.store");
         Route::post("/update/{place}", [PlaceController::class, "update"])->name("places.update");
         Route::post("/places/{place}/toggle", [PlaceController::class, "toggle"])->name("places.toggle");
-        Route::get("/delete/{place}", [PlaceController::class, "delete"])->name("places.delete");
+        Route::delete("/delete/{place}", [PlaceController::class, "delete"])->name("places.delete");
     });
     //COIN CONTROLLER
     Route::prefix("coins")->group(function () {
@@ -69,7 +69,7 @@ Route::middleware(["auth"])->group(function () {
     Route::prefix("users")->group(function () {
         Route::get("/", [UserController::class, "all"])->name("users");
         Route::get("/detailedUser/{user}", [UserController::class, "detailedUser"])->name("users.detailedUser");
-        Route::get("/delete/{user}", [UserController::class, "delete"])->name("users.delete");
+        Route::delete("/delete/{user}", [UserController::class, "delete"])->name("users.delete");
         Route::post("/selectCountry", [UserController::class, "selectCountry"])->name("users.selectCountry");
     });
     Route::get("/statistics", [StatController::class, "statistics"])->name("statistics");

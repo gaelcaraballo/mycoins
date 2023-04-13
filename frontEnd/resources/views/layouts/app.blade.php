@@ -35,19 +35,19 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="nav row">
-                    <li class="nav-item">
+                    <li class="linkMenuAdmin">
                         <a href="{{'/'}}" class="nav-link text-dark fw-bold">
                             <i class="fs-5 bi-house"></i><span class="ms-1">@lang('titles.home')</span></a>
                     </li>
-                    <li>
+                    <li class="linkMenuAdmin">
                         <a href="{{route('places')}}" class="nav-link text-dark fw-bold">
                             <i class="fs-5 bi-shop-window"></i><span class="ms-1">@lang('places.places')</span></a>
                     </li>
-                    <li>
+                    <li class="linkMenuAdmin">
                         <a href="{{route('catalog')}}" class="nav-link text-dark fw-bold">
                             <i class="fs-5 bi-coin"></i><span class="ms-1">@lang('coins.coins')</span></a>
                     </li>
-                    <li>
+                    <li class="linkMenuAdmin">
                         <a href="{{route('users')}}" class="nav-link text-dark fw-bold">
                             <i class="fs-5 bi-people"></i><span class="ms-1">@lang('views.users')</span></a>
                     </li>

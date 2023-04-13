@@ -37,3 +37,7 @@
 .bi-box-arrow-in-right {
     display: none;
 }
+
+.linkMenuAdmin:hover {
+    background-color: #efefef;
+}
