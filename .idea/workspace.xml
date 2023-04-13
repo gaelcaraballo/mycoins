@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Fixed minor errors.">
+    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Social icons in menu view are now hoverable.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/public/assets/icons/shopIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/assets/icons/shopIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/public/assets/icons/usersIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/assets/icons/usersIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/public/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/menu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,27 +181,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/DAW 2n/M12 - Projecte Final/mycoins/frontEnd/public/assets/icons&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\gaelc\\AppData\\Local\\JetBrains\\Toolbox\\apps\\PhpStorm\\ch-0\\223.8836.42\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/DAW 2n/M12 - Projecte Final/mycoins/frontEnd/public/assets/icons",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\gaelc\\AppData\\Local\\JetBrains\\Toolbox\\apps\\PhpStorm\\ch-0\\223.8836.42\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="main" />
@@ -241,9 +245,7 @@
       <workItem from="1680815610958" duration="6698000" />
       <workItem from="1681148226935" duration="7951000" />
       <workItem from="1681236015263" duration="10007000" />
-      <workItem from="1681302560215" duration="4893000" />
-      <workItem from="1681330449745" duration="3099000" />
-      <workItem from="1681404994478" duration="4965000" />
+      <workItem from="1681302560215" duration="4800000" />
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -448,21 +450,7 @@
       <option name="project" value="LOCAL" />
       <updated>1681249500751</updated>
     </task>
-    <task id="LOCAL-00030" summary="-Menu links are redesigned and prettier.">
-      <created>1681325917753</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1681325917753</updated>
-    </task>
-    <task id="LOCAL-00031" summary="-Fixed minor errors.">
-      <created>1681336982559</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1681336982559</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,9 +476,7 @@
     <MESSAGE value="-Now the addresses are displayed automatically," />
     <MESSAGE value="-Places can be created normally." />
     <MESSAGE value="-Social icons in menu view are now hoverable." />
-    <MESSAGE value="-Menu links are redesigned and prettier." />
-    <MESSAGE value="-Fixed minor errors." />
-    <option name="LAST_COMMIT_MESSAGE" value="-Fixed minor errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="-Social icons in menu view are now hoverable." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
