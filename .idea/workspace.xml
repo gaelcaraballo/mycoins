@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="- Project practically finished, fixing minor errors.">
+<<<<<<<<< Temporary merge branch 1
+    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Menu links are redesigned and prettier.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/public/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/public/css/menu.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/routes/web.php" afterDir="false" />
+=========
+    <list default="true" id="6afd0fbb-0df3-4f0f-a9ff-73199719b401" name="Changes" comment="-Fixed minor errors.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/CoinController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/app/Http/Controllers/PlaceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/addPlace.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/detailedPlace.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/resources/views/places/places.blade.php" afterDir="false" />
+>>>>>>>>> Temporary merge branch 2
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +40,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -240,9 +249,13 @@
       <workItem from="1680815610958" duration="6698000" />
       <workItem from="1681148226935" duration="7951000" />
       <workItem from="1681236015263" duration="10007000" />
-      <workItem from="1681302560215" duration="4800000" />
-      <workItem from="1681495658778" duration="25000" />
-      <workItem from="1681642012552" duration="2679000" />
+      <workItem from="1681302560215" duration="4893000" />
+<<<<<<<<< Temporary merge branch 1
+      <workItem from="1681330449745" duration="2947000" />
+=========
+      <workItem from="1681330449745" duration="3099000" />
+      <workItem from="1681404994478" duration="4965000" />
+>>>>>>>>> Temporary merge branch 2
     </task>
     <task id="LOCAL-00001" summary="continuation of error fixing and responsive for mobiles devices">
       <created>1680100632140</created>
@@ -447,29 +460,29 @@
       <option name="project" value="LOCAL" />
       <updated>1681249500751</updated>
     </task>
-    <task id="LOCAL-00030" summary="- Project practically finished, fixing minor errors.">
-      <created>1681414310664</created>
+    <task id="LOCAL-00030" summary="-Menu links are redesigned and prettier.">
+      <created>1681325917753</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1681414310664</updated>
+      <updated>1681325917753</updated>
     </task>
+<<<<<<<<< Temporary merge branch 1
     <option name="localTasksCounter" value="31" />
+=========
+    <task id="LOCAL-00031" summary="-Fixed minor errors.">
+      <created>1681336982559</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1681336982559</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
+>>>>>>>>> Temporary merge branch 2
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -491,8 +504,13 @@
     <MESSAGE value="-Now the addresses are displayed automatically," />
     <MESSAGE value="-Places can be created normally." />
     <MESSAGE value="-Social icons in menu view are now hoverable." />
-    <MESSAGE value="- Project practically finished, fixing minor errors." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Project practically finished, fixing minor errors." />
+    <MESSAGE value="-Menu links are redesigned and prettier." />
+<<<<<<<<< Temporary merge branch 1
+    <option name="LAST_COMMIT_MESSAGE" value="-Menu links are redesigned and prettier." />
+=========
+    <MESSAGE value="-Fixed minor errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="-Fixed minor errors." />
+>>>>>>>>> Temporary merge branch 2
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
